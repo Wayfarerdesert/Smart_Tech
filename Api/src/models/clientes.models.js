@@ -8,6 +8,20 @@ var Clientes = function (clientes) {
     this.email = clientes.email;
     this.contraseña = clientes.contraseña;
 };
+
+Clientes.findAll = function (result) {
+    dbConn.query("Select * from clientes", function (err, res) {
+        if (err) {
+            console.log("error: ", err);
+            result(null, err);
+        }
+        else {
+            console.log('clientes : ', res);
+            result(null, res);
+        }
+    });
+}; 
+
 Clientes.create = function (nuevoCliente, result) {
     dbConn.query("INSERT INTO clientes set ?", nuevoCliente, function (err, res) {
         if (err) {
@@ -20,39 +34,28 @@ Clientes.create = function (nuevoCliente, result) {
         }
     });
 };
-// Employee.findById = function (id, result) {
-//     dbConn.query("Select * from employees where id = ? ", id, function (err, res) {
-//         if (err) {
-//             console.log("error: ", err);
-//             result(err, null);
-//         }
-//         else {
-//             result(null, res);
-//         }
-//     });
-// };
-// Employee.findAll = function (result) {
-//     dbConn.query("Select * from employees", function (err, res) {
-//         if (err) {
-//             console.log("error: ", err);
-//             result(null, err);
-//         }
-//         else {
-//             console.log('employees : ', res);
-//             result(null, res);
-//         }
-//     });
-// };
-// Employee.update = function (id, employee, result) {
-//     dbConn.query("UPDATE employees SET first_name=?,last_name=?,email=?,phone=?,organization=?,designation=?,salary=? WHERE id = ?", [employee.first_name, employee.last_name, employee.email, employee.phone, employee.organization, employee.designation, employee.salary, id], function (err, res) {
-//         if (err) {
-//             console.log("error: ", err);
-//             result(null, err);
-//         } else {
-//             result(null, res);
-//         }
-//     });
-// };
+Clientes.findById = function (id, result) {
+    dbConn.query("Select * from clientes where id_clientes = ? ", id, function (err, res) {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+        }
+        else {
+            result(null, res);
+        }
+    });
+};
+
+Clientes.update = function (id, clientes, result) {
+    dbConn.query("UPDATE clientes SET empresa=?,nombre=?,apellido=?,email=?,contraseña=? WHERE id_clientes = ?", [clientes.empresa, clientes.nombre, clientes.apellido, clientes.email, clientes.contraseña, id], function (err, res) {
+        if (err) {
+            console.log("error: ", err);
+            result(null, err);
+        } else {
+            result(null, res);
+        }
+    });
+};
 // Employee.delete = function (id, result) {
 //     dbConn.query("DELETE FROM employees WHERE id = ?", [id], function (err, res) {
 //         if (err) {
