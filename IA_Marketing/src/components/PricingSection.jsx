@@ -17,7 +17,7 @@ const premiumFeatures = [
 
 export default function PricingSection() {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-white py-24 sm:py-32 h-screen">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -31,7 +31,7 @@ export default function PricingSection() {
           </p>
         </div>
 
-        <div>
+        <div className="container grid grid-cols-1 gap-4 sm:grid-cols-3">
           <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
             <div className="p-8 sm:p-10 lg:flex-auto">
               <h3 className="text-2xl font-bold tracking-tight text-gray-900">
