@@ -1,10 +1,12 @@
 'use strict';
 const mysql = require('mysql');
+require('dotenv').config();
+const dbPassword = process.env.DB_PASSWORD;
 
 const dbConn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '1234',
+    password: dbPassword,
     database: 'smarttech'
 });
 dbConn.connect(function (err) {

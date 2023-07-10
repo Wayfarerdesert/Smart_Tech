@@ -3,7 +3,6 @@ const Clientes = require('../models/clientes.models');
 
 exports.findAll = function (req, res) {
     Clientes.findAll(function (err, cliente) {
-        console.log('controller')
         if (err)
             res.send(err);
         console.log('res', cliente);
@@ -19,14 +18,14 @@ exports.create = function (req, res) {
         Clientes.create(nuevoCliente, function (err, cliente) {
             if (err)
                 res.send(err);
-            res.json({ error: false, message: "Cliente añadido con exito!", data: cliente });
+            res.json({cliente, message: "Cliente añadido con exito!"});
         });
     }
 };
 exports.findById = function (req, res) {
     Clientes.findById(req.params.id, function (err, cliente) {
-        if (err)
-            res.send(err);
+        if (cliente.length < 1)
+            res.send({ err, msg: "Cliente no existe" }); //consultar condicionales, da error en la segunda.!!
         res.json(cliente);
     });
 };
@@ -38,14 +37,14 @@ exports.update = function (req, res) {
         Clientes.update(req.params.id, new Clientes(req.body), function (err, cliente) {
             if (err)
                 res.send(err);
-            res.json({ error: false, message: 'Cliente modificado con exito' });
+            res.json({msg: 'Cliente modificado con exito' });
         });
     }
 };
-// exports.delete = function (req, res) {
-//     Employee.delete(req.params.id, function (err, employee) {
-//         if (err)
-//             res.send(err);
-//         res.json({ error: false, message: 'Employee successfully deleted' });
-//     });
-// };
+exports.delete = function (req, res) {
+    Clientes.delete(req.params.id, function (err, cliente) {
+        if (err)
+            res.send(err);
+        res.json({msg: 'Cliente eliminado con exito!'});
+    });
+};
