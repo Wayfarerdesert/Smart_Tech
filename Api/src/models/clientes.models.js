@@ -56,15 +56,15 @@ Clientes.update = function (id, clientes, result) {
         }
     });
 };
-// Employee.delete = function (id, result) {
-//     dbConn.query("DELETE FROM employees WHERE id = ?", [id], function (err, res) {
-//         if (err) {
-//             console.log("error: ", err);
-//             result(null, err);
-//         }
-//         else {
-//             result(null, res);
-//         }
-//     });
-// };
+Clientes.delete = function (id, result) {
+    dbConn.query("DELETE FROM clientes WHERE id_clientes = ?", [id], function (err, res) {
+        if (err) {
+            console.log("error: ", err);
+            result(null, err);
+        }
+        else {
+            result(null, res);
+        }
+    });
+};
 module.exports = Clientes;

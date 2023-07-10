@@ -8,7 +8,8 @@ router.post('/nuevoCliente', clientesController.create);
 
 router.get('/:id', clientesController.findById);
 
-router.put('/:id', clientesController.update);
+router.put('/modif/:id', clientesController.update);
 
-// router.delete('/:id', employeeController.delete);
+router.delete('/eliminar/:id', clientesController.delete);
+
 module.exports = router
