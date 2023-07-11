@@ -1,17 +1,22 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRightToBracket} from "@fortawesome/free-solid-svg-icons";
+import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import { useAuth0 } from "@auth0/auth0-react";
-
+import { Link } from "react-router-dom";
 
 function NavBar() {
-
   const { loginWithRedirect } = useAuth0();
 
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top p-3">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#"><img className="w-10 h-10" src="../public/img/logo/2023-07-07_19-08.png" alt="LOGO"/></a>
+          <a className="navbar-brand" href="#">
+            <img
+              className="w-10 h-10"
+              src="../public/img/logo/2023-07-07_19-08.png"
+              alt="LOGO"
+            />
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -30,30 +35,49 @@ function NavBar() {
             id="navbarNav"
           >
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link active hover:bg-orange-400" aria-current="page" href="#">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link hover:bg-orange-400" href="#">
-                  Sobre Nosotros
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link hover:bg-orange-400" href="#">
-                  Servicios
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link hover:bg-orange-400" href="#">
-                  Contacto
-                </a>
-              </li>
+              <Link to="/">
+                <li className="nav-item">
+                  <a
+                    className="nav-link active hover:bg-orange-500 hover:text-red-600"
+                    aria-current="page"
+                    href="#"
+                  >
+                    Home
+                  </a>
+                </li>
+              </Link>
+
+              <Link to="/Team">
+                <li className="nav-item">
+                  <a className="nav-link hover:bg-orange-500" href="#">
+                    Sobre Nosotros
+                  </a>
+                </li>
+              </Link>
+
+              <Link to="/PricingSection">
+                <li className="nav-item">
+                  <a className="nav-link hover:bg-orange-500" href="#">
+                    Servicios
+                  </a>
+                </li>
+              </Link>
+
+              <Link to="/Contact">
+                <li className="nav-item">
+                  <a className="nav-link hover:bg-orange-500" href="#">
+                    Contacto
+                  </a>
+                </li>
+              </Link>
             </ul>
           </div>
-          <a className="nav-link text-2xl hover:text-3xl cursor-pointer" onClick={() => loginWithRedirect()}><FontAwesomeIcon icon={faRightToBracket}
-           /></a>
+          <a
+            className="nav-link text-2xl hover:text-3xl cursor-pointer"
+            onClick={() => loginWithRedirect()}
+          >
+            <FontAwesomeIcon icon={faRightToBracket} />
+          </a>
         </div>
       </nav>
     </div>
