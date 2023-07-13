@@ -24,7 +24,7 @@ const people = [
 
 export default function Team() {
   return (
-    <div className="bg-white py-15 sm:py-32 h-screen mb-32" id="team">
+    <div className="bg-white py-15 sm:py-32 h-screen mb-32 flex-grow" id="team">
       <div className="mx-auto gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
         <div className="max-w-2xl mx-auto sm:text-center pb-20">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
