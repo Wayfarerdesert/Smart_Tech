@@ -1,7 +1,7 @@
-'use strict';
 const mysql = require('mysql');
 require('dotenv').config();
 const dbPassword = process.env.DB_PASSWORD;
+
 
 const dbConn = mysql.createConnection({
     host: 'localhost',

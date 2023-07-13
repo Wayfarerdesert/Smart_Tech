@@ -1,14 +1,22 @@
 const express = require('express');
-const dotenv = require('dotenv');
-const cookieParser = require('cookie-parser');
-const routes = require('./src/routes/clientes.routes')
+const myconnection = require('express-myconnection');
+const session = require('express-session');
+const bodyParser = require('body-parser');
+const routes = require('./src/routes/usuarios.routes');
 
 const app = express();
 const port = process.env.PORT || 5000;
-//app.use(cookieParser);
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
-app.use('/api/clientes', routes)
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
+app.use(bodyParser.json())
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}))
+
+app.use('/api/usuarios', routes)
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
 });
