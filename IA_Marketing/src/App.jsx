@@ -15,6 +15,9 @@ import PricingSection from "./components/PricingSection";
 import ContactForm from "./components/Contact";
 import Footer from "./components/Footer";
 
+import SignIn from "./pages/Authentication/SignIn";
+import SignUp from "./pages/Authentication/SignUp";
+
 function App() {
   return (
     <main className="flex flex-col min-h-screen">
@@ -25,6 +28,8 @@ function App() {
           <Route path="/Team" element={<Team />} />
           <Route path="/PricingSection" element={<PricingSection />} />
           <Route path="/Contact" element={<ContactForm />} />
+          <Route path="/SignIn" element={<SignIn />} />
+          <Route path="/SignUp" element={<SignUp />} />
         </Routes>
         <Footer />
       </Router>

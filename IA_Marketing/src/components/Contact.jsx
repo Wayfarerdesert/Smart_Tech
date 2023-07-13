@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ContactForm() {
   return (
-    <div className="container p-10 flex flex-col justify-center items-center h-screen mt-36 mb-60">
+    <div className="container p-10 flex flex-col justify-center items-center h-fit mt-36 mb-60">
       <img src="../public/img/logo/2023-07-07_19-04.png" className="m-16 mx-auto"></img><h2 className="text-5xl m-3">Contacta con nosotros</h2>
       <form
         id="form"
@@ -70,6 +70,23 @@ export default function ContactForm() {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-10 focus:outline focus:shadow-outline"
             type="text"
             placeholder="Asunto"
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label
+            className="block text-gray-700 text-2xl font-bold mb-2"
+            htmlFor="subject"
+          >
+            Mensaje
+          </label>
+          <textarea
+            id="message"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-10 focus:outline focus:shadow-outline"
+            type="text"
+            rows="4" cols="50"
+            placeholder="Tu mensaje"
             required
           />
         </div>

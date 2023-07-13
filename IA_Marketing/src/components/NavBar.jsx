@@ -5,11 +5,15 @@ import { Link, NavLink } from "react-router-dom";
 import "../index.css";
 
 function NavBar() {
-  const { loginWithRedirect } = useAuth0();
+  // const { loginWithRedirect } = useAuth0();
+
+  const handleIconClick = () => {
+    window.location.href = "http://localhost:5173/SignIn";
+  };
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top p-3">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top p-3 border-b-2 border-orange-400">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             <img
@@ -41,7 +45,7 @@ function NavBar() {
                   to="/"
                   className="nav-link hover:bg-orange-500 hover:text-orange-200 hover"
                   aria-current="page"
-                  activeClassName="active-link"
+                  // activeClassName="active-link"
                 >
                   Home
                 </NavLink>
@@ -52,7 +56,7 @@ function NavBar() {
                   to="/Team"
                   className="nav-link hover:bg-orange-500 hover:text-orange-200 hover"
                   aria-current="page"
-                  activeClassName="active-link"
+                  // activeClassName="active-link"
                 >
                   Sobre Nosotros
                 </NavLink>
@@ -63,7 +67,7 @@ function NavBar() {
                   to="/PricingSection"
                   className="nav-link hover:bg-orange-500 hover:text-orange-200 hover"
                   aria-current="page"
-                  activeClassName="active-link"
+                  // activeClassName="active-link"
                 >
                   Servicios
                 </NavLink>
@@ -74,19 +78,17 @@ function NavBar() {
                   to="/Contact"
                   className="nav-link hover:bg-orange-500 hover:text-orange-200 hover"
                   aria-current="page"
-                  activeClassName="active-link"
+                  // activeClassName="active-link"
                 >
                   Contacto
                 </NavLink>
               </li>
             </ul>
           </div>
-          <a
+          <FontAwesomeIcon
+            icon={faRightToBracket}
             className="nav-link text-2xl hover:text-orange-400 cursor-pointer"
-            onClick={() => loginWithRedirect()}
-          >
-            <FontAwesomeIcon icon={faRightToBracket} />
-          </a>
+            onClick={handleIconClick} />
         </div>
       </nav>
     </div>

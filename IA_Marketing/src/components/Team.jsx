@@ -1,5 +1,12 @@
 const people = [
   {
+    name: "Eva Huertas",
+    role: "Frontend",
+    image: "../public/img/team/1680077507534.jpg",
+    about:
+      "Un verdadero talento en el ámbito del diseño y la programación. Su enfoque meticuloso y centrado en el usuario le permite comprender las necesidades y deseos de los usuarios finales, traduciéndolos en soluciones de diseño intuitivas y atractivas. Es un maestro en la creación de diseños responsivos y adaptables, asegurándose de que nuestras interfaces se vean y funcionen perfectamente en diferentes dispositivos y tamaños de pantalla.",
+  },
+  {
     name: "Facundo Santana",
     role: "Frontend",
     image: "../public/img/team/1679238015203_f.jpg",
@@ -24,7 +31,7 @@ const people = [
 
 export default function Team() {
   return (
-    <div className="bg-white py-15 sm:py-32 h-screen mb-32 flex-grow" id="team">
+    <div className="py-15 sm:py-32 h-full mb-32 flex-grow" id="team">
       <div className="mx-auto gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
         <div className="max-w-2xl mx-auto sm:text-center pb-20">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -40,7 +47,7 @@ export default function Team() {
         </div>
         <ul
           role="list"
-          className="grid gap-x-8 gap-y-12 sm:grid-cols-3 sm:gap-y-16 xl:col-span-3 mx-36 md:mx-16"
+          className="grid gap-x-3 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-3 mx-36 md:mx-16"
         >
           {people.map((person) => (
             <li key={person.name}>
@@ -53,7 +60,7 @@ export default function Team() {
                 <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">
                   {person.name}
                 </h3>
-                <p className="text-sm font-semibold leading-6 text-indigo-600">
+                <p className="text-sm font-semibold leading-6 text-orange-400">
                   {person.role}
                 </p>
                 <p className="text-justify px-10 lg:px-28 py-4">{person.about}</p>

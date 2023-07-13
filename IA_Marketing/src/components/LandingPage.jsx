@@ -9,7 +9,7 @@ export default function Home() {
   //   }, []);
 
   return (
-    <main className="container m-auto p-10 pt-32 h-screen ">
+    <main className="container m-auto p-10 pt-32 h-fit ">
       <div>
         <div className="flex items-center justify-center">
           <img
