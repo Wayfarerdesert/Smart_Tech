@@ -26,7 +26,11 @@ const registro = (req, res) => {
 const usuarios = (req, res) => {
     dbConn.query('SELECT * FROM usuarios', (error, results) => {
         if (error) throw error;
-        res.json({ results });
+        else if (results.length === 0) {
+            res.send({ msg: "No hay usuarios" })
+        } else {
+            res.json({ results });
+        }
     });
 
 }
@@ -63,7 +67,7 @@ const perfil = (req, res) => {
             if (error) {
                 res.sendStatus(403);
             } else {
-                res.json({ msg: "Acceso correcto", data });
+                res.json({ msg: "Acceso autorizado", data });
             }
         });
     });
@@ -80,4 +84,31 @@ function verificaToken(req, res, next) {
     }
 }
 
-module.exports = { registro, usuarios, login, perfil };
+const eliminar = (req, res) => {
+    const id = req.params.id;
+    dbConn.query('DELETE FROM usuarios WHERE id = ?', id, (error, result) => {
+        //console.log(result)
+        if (error) throw error;
+        else if (result.affectedRows === 0) {
+            return res.send({ msg: "Usuario no encontrado" })
+        } else {
+            return res.send({ msg: "Usuario eliminado" });
+        }
+    });
+}
+
+const editar = (req, res) => {
+    const id = req.params.id;
+    const { empresa, nombre, apellido } = req.body;
+    dbConn.query('UPDATE usuarios SET empresa = ?, nombre = ?, apellido = ? WHERE id = ?', [empresa, nombre, apellido, id], (error, result) => {
+        //console.log(result)
+        if (error) throw error;
+        else if (result.affectedRows === 0) {
+            return res.send({ msg: "Usuario no encontrado" })
+        } else {
+            return res.send({ msg: "Usuario actualizado correctamente" });
+        }
+    });
+}
+
+module.exports = { registro, usuarios, login, perfil, eliminar, editar };
