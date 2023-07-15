@@ -1,2 +1,3 @@
 Smart_Tech.code-workspace
 http-server -p 8000 -a localhost -s -o indexUser.html
+.vscode
