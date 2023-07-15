@@ -165,7 +165,7 @@ const SignUp = () => {
                     <input
                       type="text"
                       placeholder="nombre de tu empresa"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
                       required
                     />
 
@@ -200,7 +200,7 @@ const SignUp = () => {
                     <input
                       type="text"
                       placeholder="tu nombre"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
                     />
 
                     <span className="absolute right-4 top-4">
@@ -235,7 +235,7 @@ const SignUp = () => {
                     <input
                       type="text"
                       placeholder="tu apellido"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
                       required
                     />
 
@@ -271,7 +271,7 @@ const SignUp = () => {
                     <input
                       type="email"
                       placeholder="Escribe tu email"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
                       required
                     />
 
@@ -303,7 +303,7 @@ const SignUp = () => {
                     <input
                       type="password"
                       placeholder="tu contraseña"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
                       required
                     />
 
@@ -339,7 +339,7 @@ const SignUp = () => {
                     <input
                       type="password"
                       placeholder="Vuelve a ingresar tu contraseña"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
                       required
                     />
 

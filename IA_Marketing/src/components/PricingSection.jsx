@@ -11,6 +11,7 @@ const proFeatures = [
 const premiumFeatures = [
   "Consultas ilimitadas",
   "Dashboard personalizado",
+  "Predicción de ventas",
   "Soporte online",
   "Soporte telefónico 24/7",
 ];
@@ -65,7 +66,7 @@ export default function PricingSection() {
                   </li>
                 ))}
               </ul>
-              <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
+              <div className="mt-16 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
                 <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16 mt-32">
                   <div className="mx-auto max-w-xs px-8 ">
                     <p className="text-base font-semibold text-gray-600">
