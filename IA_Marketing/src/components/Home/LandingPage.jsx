@@ -19,7 +19,7 @@ export default function Home() {
           <span className="text-orange-500 ont-mono text-center font-bold text-5xl mb-10 mt-20 pr-7">
             :
           </span>
-          <h1 className="font-mono text-center font-bold text-5xl mb-10 mt-24">
+          <h1 className="font-mono text-center font-bold text-5xl mb-10 mt-24 text-md-3xl">
             Datos, Tecnología, Resultados
           </h1>
         </div>
@@ -28,7 +28,7 @@ export default function Home() {
           <div className="flex items-center justify-center">
             <img
               src="../public/img/home/social-media-marketing.png"
-              className="my-16 mr-16 pt-8 w-96 h-"
+              className="my-16 mr-16 pt-8 w-96"
             ></img>
 
             <div>

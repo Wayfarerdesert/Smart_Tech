@@ -15,8 +15,13 @@ function NavBar() {
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             <img
-              className="w-35 h-12"
+              className="w-35 h-12 d-none d-md-block"
               src="../public/logo.png"
+              alt="LOGO"
+            />
+            <img
+              className="w-10 h-10 d-none d-sm-block d-md-none"
+              src="../public/img/logo/2023-07-07_19-08.png"
               alt="LOGO"
             />
           </a>

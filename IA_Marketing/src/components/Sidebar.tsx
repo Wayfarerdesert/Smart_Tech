@@ -56,11 +56,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 flex h-screen w-72.5 flex-col overflow-y-hidden border border-orange-400 bg-stone-300 duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
+      className={`absolute left-0 top-0 z-1 flex h-screen w-72.5 flex-col overflow-y-hidden border border-orange-400 bg-orange-400 duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
         sidebarOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
-      <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear mt-10">
+      <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear mt-10 bg-gray-200 rounded-bl-full pb-67">
         {/* <!-- Sidebar Menu --> */}
         <nav className="mt-5 py-4 px-4 lg:mt-9 lg:px-6">
           {/* <!-- Menu Group --> */}
