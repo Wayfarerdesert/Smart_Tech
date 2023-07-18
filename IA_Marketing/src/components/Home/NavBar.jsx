@@ -1,11 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
-import { useAuth0 } from "@auth0/auth0-react";
 import { Link, NavLink } from "react-router-dom";
 import "../../index.css";
 
 function NavBar() {
-  // const { loginWithRedirect } = useAuth0();
 
   const handleIconClick = () => {
     window.location.href = "http://localhost:5173/SignIn";
@@ -17,8 +15,8 @@ function NavBar() {
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             <img
-              className="w-10 h-10"
-              src="../public/img/logo/2023-07-07_19-08.png"
+              className="w-35 h-12"
+              src="../public/logo.png"
               alt="LOGO"
             />
           </a>
