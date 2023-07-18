@@ -8,12 +8,12 @@ import {
   NavLink,
 } from "react-router-dom";
 
-import NavBar from "./components/NavBar";
-import LandingPage from "./components/LandingPage";
-import Team from "./components/Team";
-import PricingSection from "./components/PricingSection";
-import ContactForm from "./components/Contact";
-import Footer from "./components/Footer";
+import NavBar from "./components/Home/NavBar";
+import LandingPage from "./components/Home/LandingPage";
+import Team from "./components/Home/Team";
+import PricingSection from "./components/Home/PricingSection";
+import ContactForm from "./components/Home/Contact";
+import Footer from "./components/Home/Footer";
 
 import SignIn from "./pages/Authentication/SignIn";
 import SignUp from "./pages/Authentication/SignUp";
