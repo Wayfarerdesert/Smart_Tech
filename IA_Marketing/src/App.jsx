@@ -1,22 +1,29 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.css";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  NavLink,
 } from "react-router-dom";
 
-import NavBar from "./components/NavBar";
-import LandingPage from "./components/LandingPage";
-import Team from "./components/Team";
-import PricingSection from "./components/PricingSection";
-import ContactForm from "./components/Contact";
-import Footer from "./components/Footer";
+import NavBar from "./components/Home/NavBar";
+import LandingPage from "./components/Home/LandingPage";
+import Team from "./components/Home/Team";
+import PricingSection from "./components/Home/PricingSection";
+import ContactForm from "./components/Home/Contact";
+import Footer from "./components/Home/Footer";
 
 import SignIn from "./pages/Authentication/SignIn";
 import SignUp from "./pages/Authentication/SignUp";
+
+// COMPONENTEDE DEL DASHBOARD ============
+import ECommerce from "./pages/ECommerce";
+
+import Calendar from "./pages/Calendar";
+import Profile from "./pages/Profile";
+import Settings from "./pages/Settings";
+import Tables from "./pages/Tables";
+import DefaultLayout from "./layout/DefaultLayout";
 
 function App() {
   return (
@@ -30,6 +37,14 @@ function App() {
           <Route path="/Contact" element={<ContactForm />} />
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/SignUp" element={<SignUp />} />
+
+          <Route path="/user" element={<DefaultLayout />}>
+          <Route index element={<ECommerce />} />
+          <Route exact path="/user/calendar" element={<Calendar />} />
+          <Route exact path="/user/profile" element={<Profile />} />
+          <Route path="/user/tables" element={<Tables />} />
+          <Route path="/user/settings" element={<Settings />} />
+          </Route>
         </Routes>
         <Footer />
       </Router>
@@ -38,19 +53,3 @@ function App() {
 }
 
 export default App;
-
-// import React from "react";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Home from "./pages/home/Home"
-
-// function App() {
-//   return (
-//     <Router>
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//       </Routes>
-//     </Router>
-//   );
-// };
-
-// export default App;
