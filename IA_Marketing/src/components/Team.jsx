@@ -4,7 +4,7 @@ const people = [
     role: "Frontend",
     image: "../public/img/team/1680077507534.jpg",
     about:
-      "Un verdadero talento en el ámbito del diseño y la programación. Su enfoque meticuloso y centrado en el usuario le permite comprender las necesidades y deseos de los usuarios finales, traduciéndolos en soluciones de diseño intuitivas y atractivas. Es un maestro en la creación de diseños responsivos y adaptables, asegurándose de que nuestras interfaces se vean y funcionen perfectamente en diferentes dispositivos y tamaños de pantalla.",
+      "Nuestra diseñadora UX y parte del equipo frontend, es talentosa en el ámbito del diseño y la programación. Su enfoque meticuloso y centrado en el usuario le permite comprender las necesidades y deseos de los usuarios finales, traduciéndolos en soluciones de diseño intuitivas y atractivas. Es una maestra en la creación de diseños responsivos y adaptables, asegurándose de que nuestras interfaces se vean y funcionen perfectamente en diferentes dispositivos y tamaños de pantalla.",
   },
   {
     name: "Facundo Santana",

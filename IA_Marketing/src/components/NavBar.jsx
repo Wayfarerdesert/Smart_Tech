@@ -39,11 +39,11 @@ function NavBar() {
             className="hidden lg:flex justify-content-center align-items-center navbar-collapse"
             id="navbarNav"
           >
-            <ul className="navbar-nav">
+            <ul className="navbar-nav space-x-3.5">
               <li className="nav-item">
                 <NavLink
                   to="/"
-                  className="nav-link hover:bg-orange-500 hover:text-orange-200 hover"
+                  className="nav-link rounded hover:bg-orange-500 hover:text-orange-200 hover"
                   aria-current="page"
                   // activeClassName="active-link"
                 >
@@ -54,7 +54,7 @@ function NavBar() {
               <li className="nav-item">
                 <NavLink
                   to="/Team"
-                  className="nav-link hover:bg-orange-500 hover:text-orange-200 hover"
+                  className="nav-link rounded hover:bg-orange-500 hover:text-orange-200 hover"
                   aria-current="page"
                   // activeClassName="active-link"
                 >
@@ -65,7 +65,7 @@ function NavBar() {
               <li className="nav-item">
                 <NavLink
                   to="/PricingSection"
-                  className="nav-link hover:bg-orange-500 hover:text-orange-200 hover"
+                  className="nav-link rounded hover:bg-orange-500 hover:text-orange-200 hover"
                   aria-current="page"
                   // activeClassName="active-link"
                 >
@@ -76,7 +76,7 @@ function NavBar() {
               <li className="nav-item">
                 <NavLink
                   to="/Contact"
-                  className="nav-link hover:bg-orange-500 hover:text-orange-200 hover"
+                  className="nav-link rounded hover:bg-orange-500 hover:text-orange-200 hover"
                   aria-current="page"
                   // activeClassName="active-link"
                 >
@@ -85,10 +85,21 @@ function NavBar() {
               </li>
             </ul>
           </div>
-          <FontAwesomeIcon
-            icon={faRightToBracket}
-            className="nav-link text-2xl hover:text-orange-400 cursor-pointer"
-            onClick={handleIconClick} />
+          <div>
+          <NavLink
+                  to="/SignIn"
+                  className="flex nav-link rounded p-2 hover:bg-orange-500 hover:text-orange-200 hover cursor-pointer"
+                  aria-current="page"
+                  // activeClassName="active-link"
+                >
+                  <span className="mr-2">Iniciar sesión</span>
+                    <FontAwesomeIcon
+                        icon={faRightToBracket}
+                        className="nav-link text-2xl "
+                        onClick={handleIconClick} />
+                </NavLink>
+          </div>
+          {/* hover:text-orange-400 */}
         </div>
       </nav>
     </div>
