@@ -1,25 +1,35 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+} from "react-router-dom";
 
 import NavBar from "./components/NavBar";
-import AboutUs from "./components/Home";
+import LandingPage from "./components/LandingPage";
 import Team from "./components/Team";
 import PricingSection from "./components/PricingSection";
 import ContactForm from "./components/Contact";
 import Footer from "./components/Footer";
 
+import SignIn from "./pages/Authentication/SignIn";
+import SignUp from "./pages/Authentication/SignUp";
+
 function App() {
   return (
-    <main className="bg-red-300">
+    <main className="flex flex-col min-h-screen">
       <Router>
         <NavBar />
         <Routes>
-          <Route path="/" element={<AboutUs />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/Team" element={<Team />} />
           <Route path="/PricingSection" element={<PricingSection />} />
-          <Route path="/ContactForm" element={<ContactForm />} />
+          <Route path="/Contact" element={<ContactForm />} />
+          <Route path="/SignIn" element={<SignIn />} />
+          <Route path="/SignUp" element={<SignUp />} />
         </Routes>
         <Footer />
       </Router>
@@ -29,50 +39,18 @@ function App() {
 
 export default App;
 
-// function App() {
-//   return (
-//     <header>
-//       <Router>
-//         <NavBar />
-//         <Routes>
-//           <Route path="/home" element={<Home />} />
-//           <Route path="/contact" element={<Contact />} />
-//           <Route path="/Profile" element={<Profile />} />
-//           <Route path="/Form" element={Form} />
-//         </Routes>
-//       </Router>
-//     </header>
-//   );
-// }
+// import React from "react";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import Home from "./pages/home/Home"
 
 // function App() {
 //   return (
-//     <BrowserRouter>
-//       <main className="bg-red-300">
-//           <NavBar />
-//           <Link to='/'>AboutUs
-//           </Link>
-
-//           <Link to="/Team">Team
-//           </Link>
-
-//           <Link path="/PricingSection">Pricing
-//           </Link>
-
-//           <Link to="/ContactForm">Contact
-//           </Link>
-//           <Footer />
-//       </main>
-
-//       <Switch>
-//         <Route path="/" exact element={<AboutUs />} />
-//         <Route path="/Team" element={<Team />} />
-//         <Route path="/PricingSection" element={<PricingSection />} />
-//         <Route path="/ContactForm" element={<ContactForm />} />
-//       </Switch>
-
-//     </BrowserRouter>
+//     <Router>
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//       </Routes>
+//     </Router>
 //   );
-// }
+// };
 
 // export default App;

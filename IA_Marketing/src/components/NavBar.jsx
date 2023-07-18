@@ -1,17 +1,27 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRightToBracket} from "@fortawesome/free-solid-svg-icons";
+import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import { useAuth0 } from "@auth0/auth0-react";
-
+import { Link, NavLink } from "react-router-dom";
+import "../index.css";
 
 function NavBar() {
+  // const { loginWithRedirect } = useAuth0();
 
-  const { loginWithRedirect } = useAuth0();
+  const handleIconClick = () => {
+    window.location.href = "http://localhost:5173/SignIn";
+  };
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top p-3">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top p-3 border-b-2 border-orange-400">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#"><img className="w-10 h-10" src="../public/img/logo/2023-07-07_19-08.png" alt="LOGO"/></a>
+          <a className="navbar-brand" href="#">
+            <img
+              className="w-10 h-10"
+              src="../public/img/logo/2023-07-07_19-08.png"
+              alt="LOGO"
+            />
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -31,29 +41,54 @@ function NavBar() {
           >
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active hover:bg-orange-400" aria-current="page" href="#">
+                <NavLink
+                  to="/"
+                  className="nav-link hover:bg-orange-500 hover:text-orange-200 hover"
+                  aria-current="page"
+                  // activeClassName="active-link"
+                >
                   Home
-                </a>
+                </NavLink>
               </li>
+
               <li className="nav-item">
-                <a className="nav-link hover:bg-orange-400" href="#">
+                <NavLink
+                  to="/Team"
+                  className="nav-link hover:bg-orange-500 hover:text-orange-200 hover"
+                  aria-current="page"
+                  // activeClassName="active-link"
+                >
                   Sobre Nosotros
-                </a>
+                </NavLink>
               </li>
+
               <li className="nav-item">
-                <a className="nav-link hover:bg-orange-400" href="#">
+                <NavLink
+                  to="/PricingSection"
+                  className="nav-link hover:bg-orange-500 hover:text-orange-200 hover"
+                  aria-current="page"
+                  // activeClassName="active-link"
+                >
                   Servicios
-                </a>
+                </NavLink>
               </li>
+
               <li className="nav-item">
-                <a className="nav-link hover:bg-orange-400" href="#">
+                <NavLink
+                  to="/Contact"
+                  className="nav-link hover:bg-orange-500 hover:text-orange-200 hover"
+                  aria-current="page"
+                  // activeClassName="active-link"
+                >
                   Contacto
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
-          <a className="nav-link text-2xl hover:text-3xl cursor-pointer" onClick={() => loginWithRedirect()}><FontAwesomeIcon icon={faRightToBracket}
-           /></a>
+          <FontAwesomeIcon
+            icon={faRightToBracket}
+            className="nav-link text-2xl hover:text-orange-400 cursor-pointer"
+            onClick={handleIconClick} />
         </div>
       </nav>
     </div>
