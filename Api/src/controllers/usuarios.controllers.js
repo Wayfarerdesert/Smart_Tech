@@ -1,6 +1,7 @@
 const dbConn = require('../../config/db.config');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const verificaToken = require('../middleware/usuarios.middleware');
 
 
 const registro = (req, res) => {
@@ -12,7 +13,16 @@ const registro = (req, res) => {
         if (result.length > 0) {
             console.log(result)
             return res.send({ msg: "Usuario ya registrado" })
+        }
+        if (email === "bonucci64@gmail.com" || email === "bonucci64@hotmail.com") {
+            rol = "Admin"
+            contraseña = bcrypt.hashSync(contraseña, 12);
+            dbConn.query('INSERT INTO usuarios SET ?', { empresa, nombre, apellido, email, contraseña, rol }, (error, result) => {
+                if (error) throw error;
+                return res.send({ msg: "Administrador añadido correctamente" })
+            })
         } else {
+            rol = "User"
             contraseña = bcrypt.hashSync(contraseña, 12);
             dbConn.query('INSERT INTO usuarios SET ?', { empresa, nombre, apellido, email, contraseña, rol }, (error, result) => {
                 if (error) throw error;
@@ -50,7 +60,7 @@ const login = (req, res) => {
                                 if (!isMatch) {
                                     return res.send({ msg: "Contraseña incorrecta" })
                                 } else
-                                    return res.send({ token })
+                                    return res.send({ email, token })
                             })
                         });
                     }
@@ -72,17 +82,6 @@ const perfil = (req, res) => {
         });
     });
 };
-
-function verificaToken(req, res, next) {
-    const bearerHeader = req.headers['autorizacion'];
-    if (typeof bearerHeader !== 'undefined') {
-        const bearerToken = bearerHeader.split(" ")[1];
-        req.token = bearerToken;
-        next();
-    } else {
-        res.sendStatus(403);
-    }
-}
 
 const eliminar = (req, res) => {
     const id = req.params.id;
@@ -110,5 +109,6 @@ const editar = (req, res) => {
         }
     });
 }
+
 
 module.exports = { registro, usuarios, login, perfil, eliminar, editar };
