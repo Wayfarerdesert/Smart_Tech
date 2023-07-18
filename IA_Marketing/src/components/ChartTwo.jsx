@@ -2,7 +2,7 @@ import { ApexOptions } from 'apexcharts';
 import React, { useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 
-const options: ApexOptions = {
+const options = {
   colors: ['#3C50E0', '#80CAEE'],
   chart: {
     fontFamily: 'Satoshi, sans-serif',
@@ -16,7 +16,6 @@ const options: ApexOptions = {
       enabled: false,
     },
   },
-
   responsive: [
     {
       breakpoint: 1536,
@@ -42,7 +41,6 @@ const options: ApexOptions = {
   dataLabels: {
     enabled: false,
   },
-
   xaxis: {
     categories: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
   },
@@ -52,7 +50,6 @@ const options: ApexOptions = {
     fontFamily: 'Satoshi',
     fontWeight: 500,
     fontSize: '14px',
-
     markers: {
       radius: 99,
     },
@@ -62,15 +59,8 @@ const options: ApexOptions = {
   },
 };
 
-interface ChartTwoState {
-  series: {
-    name: string;
-    data: number[];
-  }[];
-}
-
-const ChartTwo: React.FC = () => {
-  const [state, setState] = useState<ChartTwoState>({
+const ChartTwo = () => {
+  const [state, setState] = useState({
     series: [
       {
         name: 'Sales',
@@ -102,7 +92,7 @@ const ChartTwo: React.FC = () => {
               <option value="">Last Week</option>
             </select>
             <span className="absolute top-1/2 right-3 z-10 -translate-y-1/2">
-              <svg
+            <svg
                 width="10"
                 height="6"
                 viewBox="0 0 10 6"
@@ -127,12 +117,7 @@ const ChartTwo: React.FC = () => {
 
       <div>
         <div id="chartTwo" className="-ml-5 -mb-9">
-          <ReactApexChart
-            options={options}
-            series={state.series}
-            type="bar"
-            height={350}
-          />
+          <ReactApexChart options={options} series={state.series} type="bar" height={350} />
         </div>
       </div>
     </div>

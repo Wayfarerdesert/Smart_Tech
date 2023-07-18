@@ -1,13 +1,8 @@
-import { ApexOptions } from 'apexcharts';
 import React, { useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 
-interface ChartFourState {
-  series: { data: number[] }[];
-}
-
-const ChartFour: React.FC = () => {
-  const [state, setState] = useState<ChartFourState>({
+const ChartFour = () => {
+  const [state, setState] = useState({
     series: [
       {
         data: [
@@ -19,7 +14,7 @@ const ChartFour: React.FC = () => {
     ],
   });
 
-  const options: ApexOptions = {
+  const options = {
     colors: ['#3C50E0'],
     chart: {
       fontFamily: 'sans-serif',
@@ -33,7 +28,6 @@ const ChartFour: React.FC = () => {
       bar: {
         horizontal: false,
         columnWidth: '55%',
-        // endingShape: "rounded",
         borderRadius: 2,
       },
     },
@@ -90,14 +84,10 @@ const ChartFour: React.FC = () => {
       position: 'top',
       horizontalAlign: 'left',
       fontFamily: 'inter',
-
       markers: {
         radius: 99,
       },
     },
-    // yaxis: {
-    //   title: false,
-    // },
     grid: {
       yaxis: {
         lines: {
@@ -108,16 +98,10 @@ const ChartFour: React.FC = () => {
     fill: {
       opacity: 1,
     },
-
     tooltip: {
       x: {
         show: false,
       },
-      // y: {
-      //   formatter: function (val) {
-      //     return val;
-      //   },
-      // },
     },
   };
 
@@ -128,7 +112,6 @@ const ChartFour: React.FC = () => {
           Visitors Analytics
         </h3>
       </div>
-
       <div className="mb-2">
         <div id="chartFour" className="-ml-5">
           <ReactApexChart

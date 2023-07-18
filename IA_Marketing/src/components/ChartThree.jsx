@@ -1,12 +1,7 @@
-import { ApexOptions } from 'apexcharts';
 import React, { useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 
-interface ChartThreeState {
-  series: number[];
-}
-
-const options: ApexOptions = {
+const options = {
   chart: {
     type: 'donut',
   },
@@ -16,7 +11,6 @@ const options: ApexOptions = {
     show: true,
     position: 'bottom',
   },
-
   plotOptions: {
     pie: {
       donut: {
@@ -48,8 +42,8 @@ const options: ApexOptions = {
   ],
 };
 
-const ChartThree: React.FC = () => {
-  const [state, setState] = useState<ChartThreeState>({
+const ChartThree = () => {
+  const [state, setState] = useState({
     series: [65, 34, 12, 56],
   });
 
@@ -72,7 +66,7 @@ const ChartThree: React.FC = () => {
               <option value="">Yearly</option>
             </select>
             <span className="absolute top-1/2 right-3 z-10 -translate-y-1/2">
-              <svg
+            <svg
                 width="10"
                 height="6"
                 viewBox="0 0 10 6"
@@ -97,11 +91,7 @@ const ChartThree: React.FC = () => {
 
       <div className="mb-2">
         <div id="chartThree" className="mx-auto flex justify-center">
-          <ReactApexChart
-            options={options}
-            series={state.series}
-            type="donut"
-          />
+          <ReactApexChart options={options} series={state.series} type="donut" />
         </div>
       </div>
 
