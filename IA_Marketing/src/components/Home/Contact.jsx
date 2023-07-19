@@ -1,6 +1,31 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "emailjs-com";
 
 export default function ContactForm() {
+  const form = useRef();
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_dtax3pq",
+        "smartTech_template",
+        e.target,
+        "jwIUtBZGozXmnvbn-"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          window.alert('Mensaje enviado correctamente!');
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  }
+
   return (
     <div className="container p-10 flex flex-col justify-center items-center h-fit mt-36">
       <img
@@ -13,6 +38,7 @@ export default function ContactForm() {
         id="form"
         className="text-center shadow-md rounded-3xl px-8 py-16 m-4 min-w-fit sm:max-w-m h-fit bg-orange-300"
         style={{ width: "100%", maxWidth: "300px" }}
+        onSubmit={sendEmail}
       >
         <div className="mb-4">
           <label
@@ -27,6 +53,7 @@ export default function ContactForm() {
             className="shadow appearance-none border rounded w-11/12 py-2 px-3 text-gray-700leading-8 focus:outline-orange-400 focus:shadow-outline"
             type="text"
             placeholder="Nombre"
+            name="name"
             required
           />
         </div>
@@ -44,6 +71,7 @@ export default function ContactForm() {
             className="shadow appearance-none border rounded w-11/12 py-2 px-3 text-gray-700leading-8 focus:outline-orange-400 focus:shadow-outline"
             type="text"
             placeholder="Apellido"
+            name="surname"
             required
           />
         </div>
@@ -60,6 +88,7 @@ export default function ContactForm() {
             className="shadow appearance-none border rounded w-11/12 py-2 px-3 text-gray-700leading-8 focus:outline-orange-400 focus:shadow-outline"
             type="text"
             placeholder="Empresa"
+            name="company"
             required
           />
         </div>
@@ -76,6 +105,7 @@ export default function ContactForm() {
             className="shadow appearance-none border rounded w-11/12 py-2 px-3 text-gray-700leading-8 focus:outline-orange-400 focus:shadow-outline"
             type="email"
             placeholder="tu@correo.com"
+            name="email"
             required
           />
         </div>
@@ -93,6 +123,7 @@ export default function ContactForm() {
               className="shadow appearance-none border rounded w-11/12  py-2 px-3 text-gray-700leading-8 focus:outline-orange-400 focus:shadow-outline"
               type="text"
               placeholder="Asunto"
+              name="subject"
               required
             />
           </div>
@@ -111,23 +142,18 @@ export default function ContactForm() {
               rows="4"
               cols="50"
               placeholder="Tu mensaje"
+              name="message"
               required
             />
           </div>
 
-          <div className="mb-4">
-            <label className="block text-gray-700 text-1xl font-bold mb-2">
-              <input className="mr-2 leading-normal" type="checkbox" />
-              <span className="text-sm">Enviame una copia</span>
-            </label>
+          <div>
+            <input
+              type="submit"
+              value="Enviar"
+              className="bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded w-48 cursor-pinter"
+            />
           </div>
-
-          <button
-            className="bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded w-48 h- focus:outline-none focus:shadow-outline"
-            type="button"
-          >
-            Enviar
-          </button>
         </div>
       </form>
       <img src="../public/img/home/10780.jpg" className="w-screen h-52"></img>
