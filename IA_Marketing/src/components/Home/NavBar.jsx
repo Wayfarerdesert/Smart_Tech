@@ -3,7 +3,12 @@ import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import { Link, NavLink } from "react-router-dom";
 import "../../index.css";
 
+
 function NavBar() {
+
+  const redirectToHome = () => {
+    window.location.href = "/";
+  };
 
   const handleIconClick = () => {
     window.location.href = "http://localhost:5173/SignIn";
@@ -13,9 +18,9 @@ function NavBar() {
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top p-3 border-b-2 border-orange-400">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="#" onClick={redirectToHome}>
             <img
-              className="w-35 h-12 d-none d-md-block"
+              className="w-45 h-12 d-none d-md-block"
               src="../public/logo.png"
               alt="LOGO"
             />

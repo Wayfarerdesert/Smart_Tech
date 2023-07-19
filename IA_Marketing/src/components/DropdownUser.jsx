@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import UserOne from "../images/user/user.png";
 
 const DropdownUser = () => {
+  // nombre de empresa y usuario dinamico
+  const userName = 'Juan Pérez';
+  const userCompany = 'Volkswagen';
+
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const trigger = useRef();
@@ -44,10 +49,10 @@ const DropdownUser = () => {
         to="#"
       >
         <span className="hidden text-right lg:block">
-          <span className="block text-sm font-medium text-black dark:text-white">
-            Nombre de Usuario
+          <span className="block text-base font-medium text-black dark:text-white">
+            {userName}
           </span>
-          <span className="block text-xs">Cargo</span>
+          <span className="block text-xs">{userCompany}</span>
         </span>
 
         <span className="h-12 w-12 rounded-full">
@@ -77,7 +82,7 @@ const DropdownUser = () => {
         ref={dropdown}
         onFocus={() => setDropdownOpen(true)}
         onBlur={() => setDropdownOpen(false)}
-        className={`absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark ${
+        className={`absolute right-0 mt-4 flex w-62.5 flex-col rounded-b-3xl border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark ${
           dropdownOpen === true ? "block" : "hidden"
         }`}
       >
