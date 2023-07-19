@@ -1,15 +1,39 @@
 import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const SignIn = () => {
   const handleIconClick = () => {
     window.location.href = "http://localhost:5173/SignUp";
   };
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleUserDashboard = () => {
-    navigate("/user");
+  // const handleUserDashboard = () => {
+  //   navigate("/user");
+  // };
+
+  const [email, setEmail] = useState('');
+  const [contraseña, setContraseña] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('http://localhost:5000/api/usuarios/login', { email, contraseña });
+      console.log("response:", response)
+
+      localStorage.setItem('token', response.data.token);
+      console.log('token', response.data.token)
+      response.data.token ? window.location.href = '/user' : alert("Email o contraseña incorrectos, intentelo de nuevo")
+
+
+    } catch (error) {
+      console.error('Error en el inicio de sesión:', error.response.data.error);
+    }
   };
+
 
   return (
     <>
@@ -160,13 +184,14 @@ const SignIn = () => {
                 Iniciar sesión en Smart Tech
               </h2>
 
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                   <label className="mb-2.5 block font-medium text-black dark:text-white">
                     Email
                   </label>
                   <div className="relative">
                     <input
+                      value={email} onChange={(e) => setEmail(e.target.value)}
                       type="email"
                       placeholder="Enter your email"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
@@ -197,6 +222,7 @@ const SignIn = () => {
                   </label>
                   <div className="relative">
                     <input
+                      value={contraseña} onChange={(e) => setContraseña(e.target.value)}
                       type="password"
                       placeholder="contraseña"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
@@ -231,12 +257,10 @@ const SignIn = () => {
                       type="submit"
                       value="Iniciar Sesión"
                       className="w-96 cursor-pointer rounded-lg border border-warning bg-orange-400 p-4 text-white font-bold transition hover:bg-opacity-90 hover:bg-orange-500"
-                      onClick={handleUserDashboard}
                     />
                   </div>
 
-                  <button className="flex w-96 h-20 items-center justify-center gap-3.5 rounded-lg border border-stroke bg-gray p-4 hover:bg-opacity-50 dark:border-strokedark dark:bg-meta-4 dark:hover:bg-opacity-50 hover:text-orange-500"
-                  onClick={handleUserDashboard}>
+                  <button className="flex w-96 h-20 items-center justify-center gap-3.5 rounded-lg border border-stroke bg-gray p-4 hover:bg-opacity-50 dark:border-strokedark dark:bg-meta-4 dark:hover:bg-opacity-50 hover:text-orange-500">
                     <span>
                       <svg
                         width="20"
@@ -291,6 +315,7 @@ const SignIn = () => {
                     </p>
                   </p>
                 </div>
+                {errorMessage && <p>{errorMessage}</p>}
               </form>
             </div>
           </div>
