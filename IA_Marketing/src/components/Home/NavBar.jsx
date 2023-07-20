@@ -1,10 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import "../../index.css";
 
-
 function NavBar() {
+  // Get the current route location
+  const location = useLocation();
+  const isUserRoute =
+    location.pathname === "/user" || location.pathname.startsWith("/user/");
 
   const redirectToHome = () => {
     window.location.href = "/";
@@ -13,6 +16,10 @@ function NavBar() {
   const handleIconClick = () => {
     window.location.href = "http://localhost:5173/SignIn";
   };
+
+  if (isUserRoute) {
+    return null; // Hide the entire NavBar for /user and its descendants
+  }
 
   return (
     <div>
@@ -93,10 +100,16 @@ function NavBar() {
               </li>
             </ul>
           </div>
+          {/* {!isUserRoute&& (<FontAwesomeIcon
+            icon={faRightToBracket}
+            className="nav-link text-2xl hover:text-orange-400 cursor-pointer"
+            onClick={handleIconClick} />)} */}
+
           <FontAwesomeIcon
             icon={faRightToBracket}
             className="nav-link text-2xl hover:text-orange-400 cursor-pointer"
-            onClick={handleIconClick} />
+            onClick={handleIconClick}
+          />
         </div>
       </nav>
     </div>

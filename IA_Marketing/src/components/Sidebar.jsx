@@ -48,16 +48,36 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
     }
   }, [sidebarExpanded]);
 
+  const redirectToUser = () => {
+    window.location.href = "/user";
+  };
+
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 z-1 flex h-screen w-72.5 flex-col overflow-y-hidden border border-orange-400 bg-orange-400 duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
+      className={`absolute left-0 top-0 z-1 flex h-full w-72.5 flex-col overflow-y-hidden border border-orange-400 bg-orange-400 duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
         sidebarOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
-      <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear mt-10 bg-gray-200 rounded-bl-full pb-67">
+      <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear bg-gray-200 rounded-bl-full pb-67">
+        <a
+          className="navbar-brand mx-auto mt-4 "
+          href="#"
+          onClick={redirectToUser}
+        >
+          <img
+            className="w-55 h-16 d-none d-md-block "
+            src="../public/logo.png"
+            alt="LOGO"
+          />
+          <img
+            className="w-10 h-10 d-none d-sm-block d-md-none"
+            src="../public/img/logo/2023-07-07_19-08.png"
+            alt="LOGO"
+          />
+        </a>
         {/* <!-- Sidebar Menu --> */}
-        <nav className="mt-5 py-4 px-4 lg:mt-9 lg:px-6">
+        <nav className="mt-3 py-4 px-4 lg:mt-9 lg:px-6">
           {/* <!-- Menu Group --> */}
           <div>
             <h3 className="mb-3 text-sm font-bold text-white bg-orange-400 p-3">
@@ -68,7 +88,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
               <li>
                 <NavLink
                   to="/user"
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-orange-400 hover:text-gray-50 dark:hover:bg-meta-4 ${
+                  className={`group relative flex items-center gap-2.5 rounded py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-orange-400 hover:text-gray-50 dark:hover:bg-meta-4 ${
                     pathname.includes("calendar") &&
                     "bg-graydark dark:bg-meta-4"
                   }`}
@@ -110,7 +130,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
               <li>
                 <NavLink
                   to="/user/calendar"
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-orange-400 hover:text-gray-50 dark:hover:bg-meta-4 ${
+                  className={`group relative flex items-center gap-2.5 rounded py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-orange-400 hover:text-gray-50 dark:hover:bg-meta-4 ${
                     pathname.includes("calendar") &&
                     "bg-graydark dark:bg-meta-4"
                   }`}
@@ -136,7 +156,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
               <li>
                 <NavLink
                   to="/user/profile"
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-orange-400 hover:text-gray-50 dark:hover:bg-meta-4 ${
+                  className={`group relative flex items-center gap-2.5 rounded py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-orange-400 hover:text-gray-50 dark:hover:bg-meta-4 ${
                     pathname.includes("profile") && "bg-graydark dark:bg-meta-4"
                   }`}
                 >
@@ -165,7 +185,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
               <li>
                 <NavLink
                   to="/user/tables"
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-orange-400 hover:text-gray-50 dark:hover:bg-meta-4 ${
+                  className={`group relative flex items-center gap-2.5 rounded py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-orange-400 hover:text-gray-50 dark:hover:bg-meta-4 ${
                     pathname.includes("tables") && "bg-graydark dark:bg-meta-4"
                   }`}
                 >
@@ -202,7 +222,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
               <li>
                 <NavLink
                   to="/user/settings"
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-orange-400 hover:text-gray-50 dark:hover:bg-meta-4 ${
+                  className={`group relative flex items-center gap-2.5 rounded py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-orange-400 hover:text-gray-50 dark:hover:bg-meta-4 ${
                     pathname.includes("settings") &&
                     "bg-graydark dark:bg-meta-4"
                   }`}
