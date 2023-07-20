@@ -40,6 +40,13 @@ const DropdownUser = () => {
     return () => document.removeEventListener("keydown", keyHandler);
   }, [dropdownOpen]);
 
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+
+    window.location.href = '/';
+  };
+
+
   return (
     <div className="relative">
       <Link
@@ -59,9 +66,8 @@ const DropdownUser = () => {
           <img src={UserOne} alt="User" />
         </span>
         <svg
-          className={`hidden fill-current sm:block ${
-            dropdownOpen ? "rotate-180" : ""
-          }`}
+          className={`hidden fill-current sm:block ${dropdownOpen ? "rotate-180" : ""
+            }`}
           width="12"
           height="8"
           viewBox="0 0 12 8"
@@ -82,9 +88,8 @@ const DropdownUser = () => {
         ref={dropdown}
         onFocus={() => setDropdownOpen(true)}
         onBlur={() => setDropdownOpen(false)}
-        className={`absolute right-0 mt-4 flex w-62.5 flex-col rounded-b-3xl border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark ${
-          dropdownOpen === true ? "block" : "hidden"
-        }`}
+        className={`absolute right-0 mt-4 flex w-62.5 flex-col rounded-b-3xl border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark ${dropdownOpen === true ? "block" : "hidden"
+          }`}
       >
         <ul className="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
           <li>
@@ -137,7 +142,7 @@ const DropdownUser = () => {
             </Link>
           </li>
         </ul>
-        <button className="flex items-center gap-3.5 py-4 px-6 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base hover:text-orange-500">
+        <button onClick={handleLogout} className="flex items-center gap-3.5 py-4 px-6 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base hover:text-orange-500">
           <svg
             className="fill-current"
             width="22"

@@ -1,7 +1,42 @@
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import React, { useState } from 'react';
 
 
 const SignUp = () => {
+  const [empresa, setEmpresa] = useState('');
+  const [nombre, setNombre] = useState('');
+  const [apellido, setApellido] = useState('');
+  const [email, setEmail] = useState('');
+  const [contraseña, setContraseña] = useState('');
+  const [repContraseña, setRepContraseña] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios.post('http://localhost:5000/api/usuarios/registro', {
+      empresa,
+      nombre,
+      apellido,
+      email,
+      contraseña,
+      repContraseña
+    })
+      .then((response) => {
+        console.log(response)
+        if (response.data.empresa && response.data.nombre && response.data.apellido && response.data.email && response.data.contraseña === response.data.repContraseña) {
+          alert("Usuario registrado correctamente")
+          window.location.href = '/SingIn';
+        }
+        else {
+          alert("Usuario no registrado, las contraseñas no coinciden o faltan campos por completar");
+          console.log(response.data.msg)
+        }
+      })
+      .catch((error) => {
+        console.error('Error al registrar usuario:', error);
+      });
+  };
   return (
     <>
       <div className="rounded-sm bg-white shadow-default dark:bg-boxdark">
@@ -9,7 +44,7 @@ const SignUp = () => {
           <div className="hidden w-full xl:block xl:w-1/2">
             <div className="py-17.5 px-26 text-center">
               <Link className="mb-5.5 inline-block" to="/">
-              <img
+                <img
                   className="hidden dark:block"
                   src="../public/img/logo/2023-07-07_19-04.png"
                   alt="Logo"
@@ -156,13 +191,14 @@ const SignUp = () => {
                 Crea tu cuenta de Smart Tech
               </h2>
 
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                   <label className="mb-2.5 block font-medium text-black dark:text-white">
                     Empresa
                   </label>
                   <div className="relative">
                     <input
+                      value={empresa} onChange={(e) => setEmpresa(e.target.value)}
                       type="text"
                       placeholder="nombre de tu empresa"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
@@ -198,6 +234,7 @@ const SignUp = () => {
                   </label>
                   <div className="relative">
                     <input
+                      value={nombre} onChange={(e) => setNombre(e.target.value)}
                       type="text"
                       placeholder="tu nombre"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
@@ -233,6 +270,7 @@ const SignUp = () => {
                   </label>
                   <div className="relative">
                     <input
+                      value={apellido} onChange={(e) => setApellido(e.target.value)}
                       type="text"
                       placeholder="tu apellido"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
@@ -269,6 +307,7 @@ const SignUp = () => {
                   </label>
                   <div className="relative">
                     <input
+                      value={email} onChange={(e) => setEmail(e.target.value)}
                       type="email"
                       placeholder="Escribe tu email"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
@@ -301,6 +340,7 @@ const SignUp = () => {
                   </label>
                   <div className="relative">
                     <input
+                      value={contraseña} onChange={(e) => setContraseña(e.target.value)}
                       type="password"
                       placeholder="tu contraseña"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
@@ -337,6 +377,7 @@ const SignUp = () => {
                   </label>
                   <div className="relative">
                     <input
+                      value={repContraseña} onChange={(e) => setRepContraseña(e.target.value)}
                       type="password"
                       placeholder="Vuelve a ingresar tu contraseña"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
