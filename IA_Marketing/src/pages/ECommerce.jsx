@@ -8,7 +8,6 @@ import ChartTwo from "../components/ChartTwo";
 import ChartFour from "../components/ChartFour";
 import MapOne from "../components/MapOne.jsx";
 
-
 const ECommerce = () => {
   return (
     <>
