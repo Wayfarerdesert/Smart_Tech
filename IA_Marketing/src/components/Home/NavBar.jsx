@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, redirect, useLocation } from "react-router-dom";
 import DropdownUser from "../DropdownUser";
 import "../../index.css";
 
@@ -10,9 +10,13 @@ function NavBar() {
   const isUserRoute =
     location.pathname === "/user" || location.pathname.startsWith("/user/");
 
-    // Logo redirige a home
+  // Logo redirige a home
   const redirectToHome = () => {
-    window.location.href = "/";
+    if (isUserRoute) {
+      window.location.href = "/user";
+    } else {
+      window.location.href = "/";
+    }
   };
 
   // Login redirige a signIn
@@ -52,8 +56,6 @@ function NavBar() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-
-          
 
           {/* className="justify-content-center align-items-center collapse navbar-collapse" */}
           <div

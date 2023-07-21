@@ -1,6 +1,24 @@
-import Breadcrumb from '../components/Breadcrumb';
+import Breadcrumb from "../components/Breadcrumb";
+import React, { useState } from "react";
 
 const Settings = () => {
+  const [loading, setLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+
+  const AnalyzeButton = () => {
+    setLoading(true);
+    setStatusMessage("Leyendo...");
+
+    setTimeout(() => {
+      setStatusMessage("Analizando...");
+    }, 1000);
+
+    setTimeout(() => {
+      setStatusMessage("Finalizado correctamente.");
+      setLoading(false);
+    }, 5000);
+  };
+
   return (
     <>
       <div className="mx-auto max-w-270">
@@ -32,7 +50,7 @@ const Settings = () => {
                             height="20"
                             viewBox="0 0 20 20"
                             fill="none"
-                            >
+                          >
                             <g opacity="0.8">
                               <path
                                 fillRule="evenodd"
@@ -210,8 +228,7 @@ const Settings = () => {
               <div className="p-7">
                 <form action="#">
                   <div className="mb-4 flex items-center gap-3">
-                    <div className="h-14 w-14 rounded-full">
-                    </div>
+                    <div className="h-14 w-14 rounded-full"></div>
                   </div>
 
                   <div
@@ -252,7 +269,10 @@ const Settings = () => {
                         </svg>
                       </span>
                       <p>
-                        <span className="text-warning">Haga clic para cargar</span> o arrastrar y soltar
+                        <span className="text-warning">
+                          Haga clic para cargar
+                        </span>{" "}
+                        o arrastrar y soltar
                       </p>
                       <p className="mt-1.5">XLS, XLM, XLT</p>
                     </div>
@@ -274,6 +294,46 @@ const Settings = () => {
                   </div>
                 </form>
               </div>
+            </div>
+
+            <div className="bg-gray-400 m-5 p-10 items-center">
+              <label htmlFor="dropdown">Selecciona un fichero:</label>
+              <select
+                id="dropdown"
+                className="bg-red-300 p-3 mx-5 rounded-xl mb-3"
+              >
+                <option value="">Seleccionar...</option>
+                <option value="fichero1">Fichero 1</option>
+                <option value="fichero2">Fichero 2</option>
+                <option value="fichero3">Fichero 3</option>
+              </select>
+
+              {/* <button
+                className={`bg-blue-500 text-white px-4 py-2 my-3 rounded ${
+                  loading ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+                onClick={!loading ? AnalyzeButton : null}
+              >
+                {loading ? "Analizando..." : "Analizar"}
+              </button> */}
+
+              <button
+                className={`bg-blue-500 text-white px-4 py-2 rounded my-3 ${
+                  loading ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+                onClick={!loading ? AnalyzeButton : null}
+              >
+                {loading ? (
+                  <span className="loading-dots">
+                    {statusMessage}
+                    <span>.</span>
+                    <span>.</span>
+                    <span>.</span>
+                  </span>
+                ) : (
+                  "Analizar"
+                )}
+              </button>
             </div>
           </div>
         </div>
