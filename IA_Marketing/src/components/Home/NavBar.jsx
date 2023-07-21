@@ -123,7 +123,8 @@ function NavBar() {
               />
             </NavLink>
           )}
-          <DropdownUser />
+
+          {isUserRoute && <DropdownUser />}
         </div>
       </nav>
     </div>
