@@ -8,6 +8,14 @@ import ChartTwo from "../components/ChartTwo";
 import ChartFour from "../components/ChartFour";
 import MapOne from "../components/MapOne.jsx";
 
+import PieChart from "./graphics/Piechart";
+import DoughnutChart from "./graphics/DoughnutChart";
+import RadarChart from "./graphics/RadarChart";
+import BarChart from "./graphics/BarChart";
+import BarChartII from "./graphics/BarChartII";
+import AreaChart from "./graphics/AreaChart";
+import GroupedBar from "./graphics/GroupedBar";
+
 const ECommerce = () => {
   return (
     <>
@@ -18,7 +26,28 @@ const ECommerce = () => {
         <CardFour />
       </div>
 
-      <div className="mt-5 md:gap-6 2xl:gap-7.5">
+      <div className="mt-3 md:gap-6 2xl:gap-7.5">
+        {/* <ChartFour /> */}
+        <BarChart />
+      </div>
+
+      <div className="mt-3 md:gap-6 2xl:gap-7.5">
+        <BarChartII />
+      </div>
+
+      <div className="mt-3 md:gap-6 2xl:gap-7.5">
+        <AreaChart />
+      </div>
+
+      <div className="mt-3 grid grid-cols-10 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
+        <PieChart />
+        <DoughnutChart />
+        <RadarChart />
+        <GroupedBar />
+      </div>
+
+      {/* GRAFICOS DEL TEMPLATE */}
+      {/* <div className="mt-5 md:gap-6 2xl:gap-7.5">
         <ChartFour />
       </div>
 
@@ -33,7 +62,7 @@ const ECommerce = () => {
 
       <div className="mt-5 md:gap-6 2xl:gap-7.5">
         <MapOne />
-      </div>
+      </div> */}
     </>
   );
 };
