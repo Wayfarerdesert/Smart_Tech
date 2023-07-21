@@ -3,6 +3,7 @@ const myconnection = require('express-myconnection');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const routes = require('./src/routes/usuarios.routes');
+const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -15,6 +16,7 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }))
+app.use(cors());
 
 app.use('/api/usuarios', routes)
 app.listen(port, () => {

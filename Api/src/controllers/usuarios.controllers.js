@@ -5,8 +5,11 @@ const verificaToken = require('../middleware/usuarios.middleware');
 
 
 const registro = (req, res) => {
-    let { empresa, nombre, apellido, email, contraseña, rol } = req.body;
+    let { empresa, nombre, apellido, email, contraseña, repContraseña, rol } = req.body;
     dbConn.query('SELECT * FROM usuarios WHERE email = ?', [email], (error, result) => {
+        if (empresa === "" || nombre === "" || apellido === "" || email === "" || contraseña === "" || repContraseña === "") {
+            return res.send({ msg: "Complete todos los campos" })
+        }
         if (error) {
             console.log(error);
         }
@@ -14,17 +17,23 @@ const registro = (req, res) => {
             console.log(result)
             return res.send({ msg: "Usuario ya registrado" })
         }
+        if (contraseña !== repContraseña) {
+            console.log(contraseña, repContraseña)
+            return res.send({ msg: "Las contraseñas no coinciden" })
+        }
         if (email === "bonucci64@gmail.com" || email === "bonucci64@hotmail.com") {
             rol = "Admin"
             contraseña = bcrypt.hashSync(contraseña, 12);
-            dbConn.query('INSERT INTO usuarios SET ?', { empresa, nombre, apellido, email, contraseña, rol }, (error, result) => {
+            repContraseña = bcrypt.hashSync(repContraseña, 12);
+            dbConn.query('INSERT INTO usuarios SET ?', { empresa, nombre, apellido, email, contraseña, repContraseña, rol }, (error, result) => {
                 if (error) throw error;
                 return res.send({ msg: "Administrador añadido correctamente" })
             })
         } else {
             rol = "User"
             contraseña = bcrypt.hashSync(contraseña, 12);
-            dbConn.query('INSERT INTO usuarios SET ?', { empresa, nombre, apellido, email, contraseña, rol }, (error, result) => {
+            repContraseña = bcrypt.hashSync(repContraseña, 12);
+            dbConn.query('INSERT INTO usuarios SET ?', { empresa, nombre, apellido, email, contraseña, repContraseña, rol }, (error, result) => {
                 if (error) throw error;
                 return res.send({ msg: "Usuario añadido correctamente" })
             })
@@ -47,6 +56,7 @@ const usuarios = (req, res) => {
 const login = (req, res) => {
     const { email, contraseña } = req.body;
     dbConn.query('SELECT * FROM usuarios WHERE email = ?', [email], (error, result) => {
+        console.log(result)
         if (error) {
             res.status(500).json({ error: 'Ocurrió un error al obtener los datos del usuario' });
         } else {
