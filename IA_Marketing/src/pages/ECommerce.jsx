@@ -2,11 +2,6 @@ import CardFour from "../components/CardFour";
 import CardOne from "../components/CardOne";
 import CardThree from "../components/CardThree";
 import CardTwo from "../components/CardTwo";
-import ChartOne from "../components/ChartOne";
-import ChartThree from "../components/ChartThree";
-import ChartTwo from "../components/ChartTwo";
-import ChartFour from "../components/ChartFour";
-import MapOne from "../components/MapOne.jsx";
 
 import PieChart from "./graphics/Piechart";
 import DoughnutChart from "./graphics/DoughnutChart";
@@ -17,6 +12,30 @@ import AreaChart from "./graphics/AreaChart";
 import GroupedBar from "./graphics/GroupedBar";
 import ScatterChart from "./graphics/ScatterChart";
 import BubbleChart from "./graphics/BubbleChart";
+
+// Elementos importados para el mapa
+import * as ChartGeo from "chartjs-chart-geo";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  Tooltip,
+  Title,
+  Legend
+} from "chart.js";
+import Map from "./graphics/Geomap";
+
+ChartJS.register(
+  Title,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  ChartGeo.ChoroplethController,
+  ChartGeo.ProjectionScale,
+  ChartGeo.ColorScale,
+  ChartGeo.GeoFeature
+);
+// Fin de Elementos importados para el mapa
+
 
 const ECommerce = () => {
   return (
@@ -56,23 +75,9 @@ const ECommerce = () => {
         <BubbleChart />
       </div>
 
-      {/* GRAFICOS DEL TEMPLATE */}
-      {/* <div className="mt-5 md:gap-6 2xl:gap-7.5">
-        <ChartFour />
+      <div className="text-center p-10 border border-solid mt-3 bg-white rounded-xl w-full h-full">
+        <Map chosenKey="world"/>
       </div>
-
-      <div className="mt-4 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
-        <ChartOne />
-      </div>
-
-      <div className="mt-4 grid grid-cols-9 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
-        <ChartTwo />
-        <ChartThree />
-      </div>
-
-      <div className="mt-5 md:gap-6 2xl:gap-7.5">
-        <MapOne />
-      </div> */}
     </>
   );
 };

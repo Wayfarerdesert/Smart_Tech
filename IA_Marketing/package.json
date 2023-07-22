@@ -35,6 +35,7 @@
     "apexcharts": "^3.41.0",
     "babel-plugin-macros": "^3.1.0",
     "chart.js": "^4.3.0",
+    "chartjs-chart-geo": "^4.2.4",
     "emailjs-com": "^3.2.0",
     "faker": "^6.6.6",
     "file-system": "^2.2.2",
