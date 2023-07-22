@@ -15,11 +15,13 @@ import BarChart from "./graphics/BarChart";
 import BarChartII from "./graphics/BarChartII";
 import AreaChart from "./graphics/AreaChart";
 import GroupedBar from "./graphics/GroupedBar";
+import ScatterChart from "./graphics/ScatterChart";
+import BubbleChart from "./graphics/BubbleChart";
 
 const ECommerce = () => {
   return (
     <>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
         <CardOne />
         <CardTwo />
         <CardThree />
@@ -39,11 +41,19 @@ const ECommerce = () => {
         <AreaChart />
       </div>
 
-      <div className="mt-3 grid grid-cols-10 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
+      <div className="mt-3 grid grid-cols-10 gap-3 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
         <PieChart />
         <DoughnutChart />
         <RadarChart />
         <GroupedBar />
+      </div>
+
+      <div className="mt-3 md:gap-6 2xl:gap-7.5">
+        <ScatterChart />
+      </div>
+
+      <div className="mt-3 md:gap-6 2xl:gap-7.5">
+        <BubbleChart />
       </div>
 
       {/* GRAFICOS DEL TEMPLATE */}

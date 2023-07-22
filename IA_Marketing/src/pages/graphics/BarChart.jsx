@@ -49,11 +49,15 @@ function BarChart() {
     ],
   };
 
+  // Calcular el valor máximo de data
+  const maxValue = Math.max(...data.datasets[0].data) + 5;
+
   const options = {
     maintainAspectRatio: false,
     scales: {
       y: {
         beginAtZero: true,
+        max: maxValue,
       },
       x: {
         type: "category",
@@ -71,7 +75,7 @@ function BarChart() {
   };
 
   return (
-    <div className="col-span-5 rounded-sm border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
+    <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
       <h1 className="text-xl font-semibold text-black dark:text-white">
         Mi Gráfico de barras
       </h1>

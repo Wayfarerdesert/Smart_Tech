@@ -34,7 +34,7 @@ function GroupedBar() {
         stack: "Stack 0",
       },
       {
-        label: "Ventas 2023",
+        label: "Ganancias",
         data: [5, 2, 3, 8, 12, 19, 3, 13, 6, 9, 7, 7],
         backgroundColor: ["rgba(255, 99, 132, 0.8)"],
         borderColor: ["rgba(255, 99, 132, 1)"],
@@ -74,11 +74,11 @@ function GroupedBar() {
   };
 
   return (
-    <div className="col-span-5 rounded-sm border border-stroke bg-white px-1 pt-7.5 pb-5 shadow-default sm:px-7.5">
+    <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
       <h1 className="text-xl font-semibold text-black dark:text-white">
         Mi Gráfico de barras
       </h1>
-      <div className="p-10 w-full">
+      <div className="py-10 w-full">
         <Bar data={data} options={options} />
       </div>
     </div>
