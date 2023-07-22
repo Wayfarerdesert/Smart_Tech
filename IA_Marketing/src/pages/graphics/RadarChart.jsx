@@ -47,7 +47,7 @@ function RadarChart() {
   const options = {};
 
   return (
-    <div className="col-span-5 rounded-sm border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
+    <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
       <h1 className="text-xl font-semibold text-black dark:text-white">
         Mi Gráfico de Radar
       </h1>
