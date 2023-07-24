@@ -30,7 +30,16 @@ const Settings3 = () => {
           {/* <div className="mt-3 bg-white md:gap-6 2xl:gap-7.5">
           <Cargar/>
           </div> */}
-          <FileDrop/>
+          <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
+          <h1 className="text-xl font-semibold text-black dark:text-white">
+          Cargar Archivos
+          </h1>
+            <div className="p-10 w-full">
+
+                  <FileDrop/>
+
+            </div>
+          </div>
 
           {/* <Cargar/> */}
 
