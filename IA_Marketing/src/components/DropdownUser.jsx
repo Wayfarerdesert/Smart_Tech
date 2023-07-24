@@ -1,14 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-
 import UserOne from "../images/user/user.png";
+import { userName, userCompany } from "../data/userData";
 
 const DropdownUser = () => {
-  // nombre de empresa y usuario dinamico
-  const userName = 'Juan Pérez';
-  const userCompany = 'Volkswagen';
-
-
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const trigger = useRef();

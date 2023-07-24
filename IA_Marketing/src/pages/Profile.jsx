@@ -1,9 +1,10 @@
-import Breadcrumb from '../components/Breadcrumb';
-import CoverOne from '../images/cover/cover-01.png';
-import userSix from '../images/user/user.png';
+import Breadcrumb from "../components/Breadcrumb";
+import CoverOne from "../images/cover/cover-01.png";
+import userSix from "../images/user/user.png";
+
+import { userName, userCompany } from "../data/userData";
 
 const Profile = () => {
-
   return (
     <>
       <div>
@@ -19,9 +20,14 @@ const Profile = () => {
             <div className="absolute bottom-1 right-1 z-10 xsm:bottom-4 xsm:right-4">
               <label
                 htmlFor="cover"
-                className="flex cursor-pointer items-center justify-center gap-2 rounded bg-warning py-1 px-2 text-sm font-medium text-white hover:bg-opacity-80 xsm:px-4"
+                className="flex cursor-pointer items-center justify-center gap-2 rounded bg-orange-400 py-1 px-2 text-sm font-medium text-white hover:bg-opacity-80 xsm:px-4"
               >
-                <input type="file" name="cover" id="cover" className="sr-only" />
+                <input
+                  type="file"
+                  name="cover"
+                  id="cover"
+                  className="sr-only"
+                />
                 <span>
                   <svg
                     className="fill-current"
@@ -54,7 +60,7 @@ const Profile = () => {
                 <img src={userSix} alt="profile" />
                 <label
                   htmlFor="profile"
-                  className="absolute bottom-0 right-0 flex h-8.5 w-8.5 cursor-pointer items-center justify-center rounded-full bg-warning text-white hover:bg-opacity-90 sm:bottom-2 sm:right-2"
+                  className="absolute bottom-0 right-0 flex h-8.5 w-8.5 cursor-pointer items-center justify-center rounded-full bg-orange-400 text-white hover:bg-opacity-90 sm:bottom-2 sm:right-2"
                 >
                   <svg
                     className="fill-current"
@@ -87,9 +93,9 @@ const Profile = () => {
             </div>
             <div className="mt-4">
               <h3 className="mb-1.5 text-2xl font-semibold text-black dark:text-white">
-                Usuario
+                {userName}
               </h3>
-              <p className="font-medium">Administrador</p>
+              <p className="font-medium">{userCompany}</p>
               <div className="mx-auto mt-4.5 mb-5.5 grid max-w-94 grid-cols-3 rounded-md border border-stroke py-2.5 shadow-1 dark:border-strokedark dark:bg-[#37404F]">
                 <div className="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 dark:border-strokedark xsm:flex-row">
                   <span className="font-semibold text-black dark:text-white">
@@ -118,9 +124,9 @@ const Profile = () => {
                 <p className="mt-4.5">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Pellentesque posuere fermentum urna, eu condimentum mauris
-                  tempus ut. Donec fermentum blandit aliquet. Etiam dictum dapibus
-                  ultricies. Sed vel aliquet libero. Nunc a augue fermentum,
-                  pharetra ligula sed, aliquam lacus.
+                  tempus ut. Donec fermentum blandit aliquet. Etiam dictum
+                  dapibus ultricies. Sed vel aliquet libero. Nunc a augue
+                  fermentum, pharetra ligula sed, aliquam lacus.
                 </p>
               </div>
 
@@ -131,7 +137,7 @@ const Profile = () => {
                 <div className="flex items-center justify-center gap-3.5">
                   <a
                     href="#"
-                    className="hover:text-warning"
+                    className="hover:text-orange-400"
                     aria-label="social-icon"
                   >
                     <svg
@@ -140,7 +146,6 @@ const Profile = () => {
                       height="22"
                       viewBox="0 0 22 22"
                       fill="none"
-
                     >
                       <g clipPath="url(#clip0_30_966)">
                         <path
@@ -157,7 +162,7 @@ const Profile = () => {
                   </a>
                   <a
                     href="#"
-                    className="hover:text-warning"
+                    className="hover:text-orange-400"
                     aria-label="social-icon"
                   >
                     <svg
@@ -166,7 +171,6 @@ const Profile = () => {
                       height="22"
                       viewBox="0 0 23 22"
                       fill="none"
-
                     >
                       <g clipPath="url(#clip0_30_970)">
                         <path
@@ -188,7 +192,7 @@ const Profile = () => {
                   </a>
                   <a
                     href="#"
-                    className="hover:text-warning"
+                    className="hover:text-orange-400"
                     aria-label="social-icon"
                   >
                     <svg
@@ -197,7 +201,6 @@ const Profile = () => {
                       height="22"
                       viewBox="0 0 23 22"
                       fill="none"
-
                     >
                       <g clipPath="url(#clip0_30_974)">
                         <path
@@ -219,7 +222,7 @@ const Profile = () => {
                   </a>
                   <a
                     href="#"
-                    className="hover:text-warning"
+                    className="hover:text-orange-400"
                     aria-label="social-icon"
                   >
                     <svg
@@ -228,7 +231,6 @@ const Profile = () => {
                       height="22"
                       viewBox="0 0 22 22"
                       fill="none"
-
                     >
                       <g clipPath="url(#clip0_30_978)">
                         <path
@@ -245,7 +247,7 @@ const Profile = () => {
                   </a>
                   <a
                     href="#"
-                    className="hover:text-warning"
+                    className="hover:text-orange-400"
                     aria-label="social-icon"
                   >
                     <svg
@@ -254,7 +256,6 @@ const Profile = () => {
                       height="22"
                       viewBox="0 0 23 22"
                       fill="none"
-
                     >
                       <g clipPath="url(#clip0_30_982)">
                         <path
@@ -280,7 +281,6 @@ const Profile = () => {
           </div>
         </div>
       </div>
-
     </>
   );
 };

@@ -208,7 +208,7 @@ const Settings = () => {
                       Cancelar
                     </button>
                     <button
-                      className="flex justify-center rounded bg-warning py-2 px-6 font-medium text-gray hover:shadow-1"
+                      className="flex justify-center rounded bg-orange-400 py-2 px-6 font-medium text-gray hover:shadow-1"
                       type="submit"
                     >
                       Guardar
@@ -233,7 +233,7 @@ const Settings = () => {
 
                   <div
                     id="FileUpload"
-                    className="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border-2 border-dashed border-warning bg-gray py-4 px-4 dark:bg-meta-4 sm:py-7.5"
+                    className="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border-2 border-dashed border-orange-400 bg-gray py-4 px-4 dark:bg-meta-4 sm:py-7.5"
                   >
                     <input
                       type="file"
@@ -269,7 +269,7 @@ const Settings = () => {
                         </svg>
                       </span>
                       <p>
-                        <span className="text-warning">
+                        <span className="text-orange-400">
                           Haga clic para cargar
                         </span>{" "}
                         o arrastrar y soltar
@@ -286,7 +286,7 @@ const Settings = () => {
                       Cancelar
                     </button>
                     <button
-                      className="flex justify-center rounded bg-warning py-2 px-6 font-medium text-gray hover:bg-opacity-70"
+                      className="flex justify-center rounded bg-orange-400 py-2 px-6 font-medium text-gray hover:bg-opacity-70"
                       type="submit"
                     >
                       Guardar
