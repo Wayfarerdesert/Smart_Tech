@@ -1,6 +1,6 @@
-import React from "react";
+// import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route,  } from "react-router-dom"; //useLocation
 
 import NavBar from "./components/Home/NavBar";
 import LandingPage from "./components/Home/LandingPage";
@@ -18,6 +18,7 @@ import ECommerce from "./pages/ECommerce";
 import Calendar from "./pages/Calendar";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
+import Settings3 from "./pages/Settings3";
 import Tables from "./pages/Tables";
 import DefaultLayout from "./layout/DefaultLayout";
 
@@ -40,6 +41,8 @@ function App() {
             <Route exact path="/user/profile" element={<Profile />} />
             <Route path="/user/tables" element={<Tables />} />
             <Route path="/user/settings" element={<Settings />} />
+            <Route path="/user/settings3" element={<Settings3 />} />
+
           </Route>
 
           <Route path="*" element={<NotFound />} />

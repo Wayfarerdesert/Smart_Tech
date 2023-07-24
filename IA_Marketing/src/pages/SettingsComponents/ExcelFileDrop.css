@@ -1,0 +1,17 @@
+.dropzone {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .dropzone.active {
+    border-color: orange;
+    background-color: lightgray;
+  }
+  
+  .dropzone p {
+    font-size: 16px;
+    margin: 0;
+  }
+  
