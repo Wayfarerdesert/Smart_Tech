@@ -23,7 +23,8 @@ const storage = multer.diskStorage({
     destination: './uploads',
     filename: (req, file, cb) => {
         // Generar un nombre único para el archivo
-        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+        // const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+        const uniqueSuffix = 'file-01' + '-' + Math.round(Math.random() * 1e5);
         const fileExtension = path.extname(file.originalname);
         cb(null, file.fieldname + '-' + uniqueSuffix + fileExtension);
     },

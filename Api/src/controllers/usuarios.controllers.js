@@ -64,7 +64,6 @@ const login = (req, res) => {
             res.status(401).json({ error: 'Credenciales inválidas' });
         } else {
             const user = result[0];
-            console.log(user)
             bcrypt.compare(contraseña, user.contraseña, function (err, isMatch) {
                 if (!isMatch) {
                     return res.send({ msg: "Contraseña incorrecta" });
