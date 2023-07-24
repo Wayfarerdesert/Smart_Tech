@@ -53,33 +53,30 @@ const usuarios = (req, res) => {
     });
 
 }
+
 const login = (req, res) => {
     const { email, contraseña } = req.body;
     dbConn.query('SELECT * FROM usuarios WHERE email = ?', [email], (error, result) => {
-        console.log(result)
         if (error) {
             res.status(500).json({ error: 'Ocurrió un error al obtener los datos del usuario' });
-        } else {
-            if (result.length === 0) {
-                res.status(401).json({ error: 'Credenciales inválidas' });
-            } else {
-                jwt.sign({ email }, 'secretKey', (err, token) => {
-                    if (result.length !== 0) {
-                        result.forEach(e => {
-                            bcrypt.compare(contraseña, e.contraseña, function (err, isMatch) {
-                                if (!isMatch) {
-                                    return res.send({ msg: "Contraseña incorrecta" })
-                                } else
-                                    return res.send({ email, token })
-                            })
-                        });
-                    }
-                })
-
-            }
         }
-    })
-}
+        if (result.length === 0) {
+            res.status(401).json({ error: 'Credenciales inválidas' });
+        } else {
+            const user = result[0];
+            console.log(user)
+            bcrypt.compare(contraseña, user.contraseña, function (err, isMatch) {
+                if (!isMatch) {
+                    return res.send({ msg: "Contraseña incorrecta" });
+                } else {
+                    jwt.sign({ email, id: user.id }, 'secretKey', (err, token) => {
+                        return res.send({ email, id: user.id, token });
+                    });
+                }
+            });
+        }
+    });
+};
 
 const perfil = (req, res) => {
     verificaToken(req, res, () => {
@@ -88,6 +85,7 @@ const perfil = (req, res) => {
                 res.sendStatus(403);
             } else {
                 res.json({ msg: "Acceso autorizado", data });
+                console.log(data.id)
             }
         });
     });

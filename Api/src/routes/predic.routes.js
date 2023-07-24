@@ -1,15 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const {} = require('../controllers/predic.controllers');
+const { subirArchivo, allFiles, scriptPython } = require('../controllers/predic.controllers');
 
 
 
-// router.post('/registro', registro);
-// router.get('/all', usuarios);
-// router.post('/login', login);
-// router.post('/perfil', perfil);
-// router.get('/eliminar/:id', eliminar);
-// router.post('/editar/:id', editar);
-
+router.post('/uploads', subirArchivo);
+router.get('/api/files', allFiles);
+router.get('/open-file/:filename', scriptPython);
 
 module.exports = router
