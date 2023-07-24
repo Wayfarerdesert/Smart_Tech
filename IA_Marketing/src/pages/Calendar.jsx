@@ -1,15 +1,40 @@
 import Breadcrumb from "../components/Breadcrumb";
+import React, { useState, useEffect } from "react";
 
 const Calendar = () => {
+
+  const [currentDay, setCurrentDay] = useState(new Date());
+
+  useEffect(() => {
+    // Función para obtener el día actual
+    const updateCurrentDay = () => {
+      setCurrentDay(new Date());
+    };
+
+    // Actualiza el día actual cada segundo
+    const interval = setInterval(updateCurrentDay, 1000);
+
+    // Limpia el intervalo cuando el componente se desmonta
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <Breadcrumb pageName="Calendario" />
+
+      <div className="w-full flex items-center justify-center my-4">
+        <h2 className="text-lg font-semibold">
+          {currentDay.getDate().toString().padStart(2, "0")}{" "}
+          {currentDay.toLocaleDateString("es-ES", { month: "long" })}{" "}
+          {currentDay.getFullYear()}
+        </h2>
+      </div>
 
       {/* <!-- ====== Calendar Section Start ====== --> */}
       <div className="w-full max-w-full rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <table className="w-full">
           <thead>
-            <tr className="grid grid-cols-7 rounded-t-sm bg-warning text-white">
+            <tr className="grid grid-cols-7 rounded-t-sm bg-orange-400 text-white">
               <th className="flex h-15 items-center justify-center rounded-tl-sm p-1 text-xs font-semibold sm:text-base xl:p-5">
                 <span className="hidden lg:block"> Sunday </span>
                 <span className="block lg:hidden"> Sun </span>

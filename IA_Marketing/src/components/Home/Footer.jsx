@@ -12,10 +12,7 @@ import {
 
 export default function Footer() {
   return (
-    <MDBFooter
-      bgColor="light"
-      className="text-center text-lg-start text-muted mt-20"
-    >
+    <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
       <section className="py-20 mt-auto">
         <MDBContainer className="text-center text-md-start mt-5">
           <MDBRow className="mt-3">
@@ -37,27 +34,15 @@ export default function Footer() {
               </h6>
 
               <Link to="/PricingSection">
-                <p>
-                  <a href="#!" className="text-reset">
-                    Pricing
-                  </a>
-                </p>
+                <p className="text-reset">Pricing</p>
               </Link>
 
               <Link to="/Contact">
-                <p>
-                  <a href="#!" className="text-reset">
-                    FAQ's
-                  </a>
-                </p>
+                <p className="text-reset">FAQ's</p>
               </Link>
 
               <Link to="/Contact">
-                <p>
-                  <a href="#!" className="text-reset">
-                    Help
-                  </a>
-                </p>
+                <p className="text-reset">Help</p>
               </Link>
             </MDBCol>
 

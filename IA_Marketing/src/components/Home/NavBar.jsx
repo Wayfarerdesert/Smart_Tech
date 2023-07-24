@@ -1,25 +1,33 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink, redirect, useLocation } from "react-router-dom";
+import DropdownUser from "../DropdownUser";
 import "../../index.css";
 
 function NavBar() {
-  // Get the current route location
+  // Ocultar boton de login en el dashboard
   const location = useLocation();
   const isUserRoute =
     location.pathname === "/user" || location.pathname.startsWith("/user/");
 
+  // Logo redirige a home
   const redirectToHome = () => {
-    window.location.href = "/";
+    if (isUserRoute) {
+      window.location.href = "/user";
+    } else {
+      window.location.href = "/";
+    }
   };
 
+  // Login redirige a signIn
   const handleIconClick = () => {
     window.location.href = "http://localhost:5173/SignIn";
   };
 
-  if (isUserRoute) {
-    return null; // Hide the entire NavBar for /user and its descendants
-  }
+  // Oculta el navbar completo dentro del dashboard
+  // if (isUserRoute) {
+  //   return null; // Hide the entire NavBar for /user and its descendants
+  // }
 
   return (
     <div>
@@ -100,21 +108,23 @@ function NavBar() {
               </li>
             </ul>
           </div>
-          <div>
-          <NavLink
-                  to="/SignIn"
-                  className="flex nav-link rounded p-2 hover:bg-orange-500 hover:text-orange-200 hover cursor-pointer"
-                  aria-current="page"
-                  // activeClassName="active-link"
-                >
-                  <span className="mr-2">Iniciar sesión</span>
-                    <FontAwesomeIcon
-                        icon={faRightToBracket}
-                        className="nav-link text-2xl "
-                        onClick={handleIconClick} />
-                </NavLink>
-          </div>
-          {/* hover:text-orange-400 */}
+          {!isUserRoute && (
+            <NavLink
+              to="/SignIn"
+              className="flex nav-link rounded p-2 hover:bg-orange-500 hover:text-orange-200 hover cursor-pointer"
+              aria-current="page"
+              // activeClassName="active-link"
+            >
+              <span className="mr-2">Iniciar sesión</span>
+              <FontAwesomeIcon
+                icon={faRightToBracket}
+                className="nav-link text-2xl "
+                onClick={handleIconClick}
+              />
+            </NavLink>
+          )}
+
+          {isUserRoute && <DropdownUser />}
         </div>
       </nav>
     </div>
