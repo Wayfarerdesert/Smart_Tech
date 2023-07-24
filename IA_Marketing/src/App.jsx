@@ -18,7 +18,7 @@ import ECommerce from "./pages/ECommerce";
 import Calendar from "./pages/Calendar";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
-import Settings3 from "./pages/Settings3";
+import Settings1 from "./pages/Settings1";
 import Tables from "./pages/Tables";
 import DefaultLayout from "./layout/DefaultLayout";
 
@@ -41,7 +41,7 @@ function App() {
             <Route exact path="/user/profile" element={<Profile />} />
             <Route path="/user/tables" element={<Tables />} />
             <Route path="/user/settings" element={<Settings />} />
-            <Route path="/user/settings3" element={<Settings3 />} />
+            <Route path="/user/settings1" element={<Settings1 />} />
 
           </Route>
 

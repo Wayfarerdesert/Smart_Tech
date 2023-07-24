@@ -29,13 +29,14 @@ const ExcelFileDrop = ({ onFileDrop }) => {
       {isDragActive ? (
         <p>Suelta el archivo de Excel aquí...</p>
       ) : (
-        <p>Arrastra y suelta un archivo de Excel aquí, o haz clic para seleccionarlo.</p>
+        <p>Arrastra y suelta un archivo de Excel aquí, o <span className="text-warning justify-center items-center h-full">haz clic para seleccionarlo </span><span className="mt-1.5">(solo archivos XLSX)</span> </p>
+        
       )}
     </div>
   );
 };
 
-// //para el error con PropTypes
+//para el error con PropTypes
 
 ExcelFileDrop.propTypesropTypes = {
   onFileDrop: PropTypes.string.isRequired

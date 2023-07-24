@@ -1,30 +1,84 @@
 import Breadcrumb from "../components/Breadcrumb";
-import React, { useState } from "react";
+import FileDrop from "./SettingsComponents/FileDrop";
+import React, { useState } from "react"; //
 
 const Settings = () => {
-  const [loading, setLoading] = useState(false);
-  const [statusMessage, setStatusMessage] = useState("");
+  // const [loading, setLoading] = useState(false);
+  // const [statusMessage, setStatusMessage] = useState("");
 
-  const AnalyzeButton = () => {
-    setLoading(true);
-    setStatusMessage("Leyendo...");
+  // const AnalyzeButton = () => {
+  //   setLoading(true);
+  //   setStatusMessage("Leyendo...");
 
-    setTimeout(() => {
-      setStatusMessage("Analizando...");
-    }, 1000);
+  //   setTimeout(() => {
+  //     setStatusMessage("Analizando...");
+  //   }, 1000);
 
-    setTimeout(() => {
-      setStatusMessage("Finalizado correctamente.");
-      setLoading(false);
-    }, 5000);
-  };
+  //   setTimeout(() => {
+  //     setStatusMessage("Finalizado correctamente.");
+  //     setLoading(false);
+  //   }, 5000);
+  // };
 
   return (
     <>
       <div className="mx-auto max-w-270">
-        <Breadcrumb pageName="Configuración" />
+        <Breadcrumb pageName="Archivo" />
 
-        <div className="grid grid-cols-5 gap-8">
+          {/* <h1>hOLI</h1> */}
+
+          <div className="mt-3 bg-white md:gap-6 2xl:gap-7.5">
+            <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
+              <h1 className="text-xl font-semibold text-black dark:text-white">
+              Cargar Archivos
+              </h1>
+                <div className="p-10 w-full">
+                      <FileDrop/>
+                </div>
+            </div>
+          </div>
+
+          <div className="mt-3 bg-white md:gap-6 2xl:gap-7.5">
+            <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
+            <h1 className="text-xl font-semibold text-black dark:text-white">
+            Seleccionar Archivos
+            </h1>
+              <div className="p-10 w-full">
+                    {/* <Select/> */}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-3 bg-white md:gap-6 2xl:gap-7.5">
+            <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
+              <h1 className="text-xl font-semibold text-black dark:text-white">
+              Analizar Archivos
+              </h1>
+                <div className="p-10 w-full">
+                      {/* <Analizar/> */}
+                </div>
+            </div>
+          </div>
+
+          {/* <Analizar/> */}
+
+      </div> 
+
+    </>
+  );
+};
+
+export default Settings;
+
+
+//**** código original plantilla comentado aquí debajo
+
+
+
+                              {/* Form Info personal */}
+
+
+        {/* <div className="grid grid-cols-5 gap-8">
           <div className="col-span-5 xl:col-span-3">
             <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
               <div className="border-b border-stroke py-4 px-7 dark:border-strokedark">
@@ -217,8 +271,12 @@ const Settings = () => {
                 </form>
               </div>
             </div>
-          </div>
-          <div className="col-span-5 xl:col-span-2">
+          </div> */}
+
+                              {/* Ventas anuales */}
+
+
+          {/* <div className="col-span-5 xl:col-span-2">
             <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
               <div className="border-b border-stroke py-4 px-7 dark:border-strokedark">
                 <h3 className="font-medium text-black dark:text-white">
@@ -294,9 +352,11 @@ const Settings = () => {
                   </div>
                 </form>
               </div>
-            </div>
+            </div> */}
 
-            <div className="bg-gray-400 m-5 p-10 items-center">
+                              {/* Seleccionar */}
+
+            {/* <div className="bg-gray-400 m-5 p-10 items-center">
               <label htmlFor="dropdown">Selecciona un fichero:</label>
               <select
                 id="dropdown"
@@ -306,7 +366,7 @@ const Settings = () => {
                 <option value="fichero1">Fichero 1</option>
                 <option value="fichero2">Fichero 2</option>
                 <option value="fichero3">Fichero 3</option>
-              </select>
+              </select> */}
 
               {/* <button
                 className={`bg-blue-500 text-white px-4 py-2 my-3 rounded ${
@@ -317,7 +377,7 @@ const Settings = () => {
                 {loading ? "Analizando..." : "Analizar"}
               </button> */}
 
-              <button
+              {/* <button
                 className={`bg-blue-500 text-white px-4 py-2 rounded my-3 ${
                   loading ? "opacity-50 cursor-not-allowed" : ""
                 }`}
@@ -336,10 +396,5 @@ const Settings = () => {
               </button>
             </div>
           </div>
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default Settings;
+        </div>*/}
+      
