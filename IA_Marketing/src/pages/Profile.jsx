@@ -2,7 +2,8 @@ import Breadcrumb from "../components/Breadcrumb";
 import CoverOne from "../images/cover/cover-01.png";
 import userSix from "../images/user/user.png";
 
-import { userName, userCompany } from "../data/userData";
+// import { userName, userCompany } from "../data/userData";
+import UserData from "../data/userData";
 
 const Profile = () => {
   return (
@@ -93,9 +94,9 @@ const Profile = () => {
             </div>
             <div className="mt-4">
               <h3 className="mb-1.5 text-2xl font-semibold text-black dark:text-white">
-                {userName}
+                {UserData.userName}
               </h3>
-              <p className="font-medium">{userCompany}</p>
+              <p className="font-medium">{UserData.userCompany}</p>
               <div className="mx-auto mt-4.5 mb-5.5 grid max-w-94 grid-cols-3 rounded-md border border-stroke py-2.5 shadow-1 dark:border-strokedark dark:bg-[#37404F]">
                 <div className="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 dark:border-strokedark xsm:flex-row">
                   <span className="font-semibold text-black dark:text-white">

@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import UserOne from "../images/user/user.png";
-import { userName, userCompany } from "../data/userData";
+// import { userName, userCompany } from "../data/userData";
+import UserData from "../data/userData";
 
 const DropdownUser = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -52,9 +53,9 @@ const DropdownUser = () => {
       >
         <span className="hidden text-right lg:block">
           <span className="block text-base font-medium text-black dark:text-white">
-            {userName}
+            {UserData.userName}
           </span>
-          <span className="block text-xs">{userCompany}</span>
+          <span className="block text-xs">{UserData.userCompany}</span>
         </span>
 
         <span className="h-12 w-12 rounded-full">
