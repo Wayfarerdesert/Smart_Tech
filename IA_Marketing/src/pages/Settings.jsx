@@ -1,5 +1,8 @@
 import Breadcrumb from "../components/Breadcrumb";
 import React, { useState } from "react";
+import PdfDownloader from "../components/pdfDownloader/PdfDownloader";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 const Settings = () => {
   const [loading, setLoading] = useState(false);
@@ -17,6 +20,11 @@ const Settings = () => {
       setStatusMessage("Finalizado correctamente.");
       setLoading(false);
     }, 5000);
+  };
+
+  const handleDownload = () => {
+    const xlsxURL = '../../public/spreadsheet/FILE_plantilla.xlsx';
+    window.open(xlsxURL, '_blank');
   };
 
   return (
@@ -224,6 +232,12 @@ const Settings = () => {
                 <h3 className="font-medium text-black dark:text-white">
                   Ventas Anuales
                 </h3>
+
+                <button className="flex ml-auto justify-end rounded bg-orange-400 py-2 px-6 font-medium text-gray hover:shadow-1 hover:bg-orange-500 hover:text-gray-200"
+                onClick={handleDownload}>
+                  <span className="mr-2">Planilla</span>
+                  <FontAwesomeIcon icon={faDownload} />
+                </button>
               </div>
               <div className="p-7">
                 <form action="#">
@@ -337,6 +351,8 @@ const Settings = () => {
             </div>
           </div>
         </div>
+
+        <PdfDownloader />
       </div>
     </>
   );
