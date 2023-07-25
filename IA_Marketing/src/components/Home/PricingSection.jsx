@@ -65,7 +65,7 @@ export default function PricingSection() {
                   ))}
                 </ul>
                 <div className="mt-16 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-                  <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16 mt-32">
+                  <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16 mt-28">
                     <div className="mx-auto max-w-xs px-8">
                       <p className="text-base font-semibold text-gray-600">
                         {plan.payment}
@@ -74,6 +74,12 @@ export default function PricingSection() {
                         <span className="text-5xl font-bold tracking-tight text-gray-900">
                           {plan.value}
                         </span>
+
+                        <span
+                          className="text-4xl font-bold tracking-tight text-gray-900"
+                          dangerouslySetInnerHTML={{ __html: plan.cents }}
+                        ></span>
+
                         <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
                           {plan.currency}
                         </span>

@@ -53,8 +53,9 @@ const services = [{
         subtitle: "Que incluye",
         benefits: ["Acceso a una consulta", "Dashboard personalizado"]
     },
-    payment: "Paga una vez, poseelo para siempre",
-    value: "€99",
+    payment: "Suscripción Mensual",
+    value: "€29",
+    cents: "<sup>99</sup>",
     currency: "EUR",
     invoices: "Facturas y recibos disponibles para facilitar el reembolso de la empresa"
 },
@@ -69,8 +70,9 @@ const services = [{
             "Soporte online",
         ]
     },
-    payment: "Paga una vez, poseelo para siempre",
-    value: "€149",
+    payment: "Suscripción Mensual",
+    value: "€49",
+    cents: "<sup>99</sup>",
     currency: "EUR",
     invoices: "Facturas y recibos disponibles para facilitar el reembolso de la empresa"
 },
@@ -87,8 +89,9 @@ const services = [{
             "Soporte telefónico 24/7",
         ]
     },
-    payment: "Paga una vez, poseelo para siempre",
-    value: "€199",
+    payment: "Suscripción Mensual",
+    value: "€89",
+    cents: "<sup>99</sup>",
     currency: "EUR",
     invoices: "Facturas y recibos disponibles para facilitar el reembolso de la empresa"
 },
