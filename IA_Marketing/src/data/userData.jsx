@@ -1,15 +1,11 @@
-// // nombre de empresa y usuario dinamico
-// const userName = 'Juan Pérez';
-// const userCompany = 'Volkswagen';
-
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import DropdownUser from "../components/DropdownUser";
-import Profile from "../pages/Profile";
 
 const UserData = () => {
   const [userName, setUserName] = useState("");
+  const [userSurname, setUserSurname] = useState("");
   const [userCompany, setUserCompany] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Obtener el idCliente almacenado en el localStorage
@@ -21,25 +17,33 @@ const UserData = () => {
         const response = await axios.get(
           `http://localhost:5000/api/usuarios/usuario/${idCliente}`
         );
-        console.log(response.data.data.empresa)
+        console.log("Nombre de Empresa:", response.data.data.empresa);
         const empresa = response.data.data.empresa;
         const nombre = response.data.data.nombre;
+        const apellido = response.data.data.apellido;
 
         setUserName(nombre);
+        setUserSurname(apellido);
         setUserCompany(empresa);
+        setLoading(false);
       } catch (error) {
         console.error("Error al obtener los datos del usuario:", error);
+        setLoading(false); // Marcar que los datos han sido cargados, incluso en caso de error.
       }
     };
 
     fetchUserData();
-  }, []); // El efecto se ejecutará solo una vez al montar el componente
-  return (
-    <div>
-      <DropdownUser userName={userName} userCompany={userCompany} />
-      <Profile userName={userName} userCompany={userCompany} />
-    </div>
-  );
+  }, []);
+
+  if (loading) {
+    return <p>Cargando...</p>;
+  }
+
+  return {
+    userName,
+    userSurname,
+    userCompany,
+  };
 };
 
 export default UserData;

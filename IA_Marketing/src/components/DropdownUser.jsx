@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import UserOne from "../images/user/user.png";
 import UserData from "../data/userData";
 
+const DropdownUser = () => {
+  const { userName, userSurname, userCompany } = UserData();
 
-
-const DropdownUser = ({ userName, userCompany }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const trigger = useRef();
@@ -38,11 +38,10 @@ const DropdownUser = ({ userName, userCompany }) => {
   }, [dropdownOpen]);
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
 
-    window.location.href = '/';
+    window.location.href = "/";
   };
-
 
   return (
     <div className="relative">
@@ -55,6 +54,7 @@ const DropdownUser = ({ userName, userCompany }) => {
         <span className="hidden text-right lg:block">
           <span className="block text-base font-medium text-black dark:text-white">
             {userName}
+            {userSurname}
           </span>
           <span className="block text-xs">{userCompany}</span>
         </span>
@@ -63,8 +63,9 @@ const DropdownUser = ({ userName, userCompany }) => {
           <img src={UserOne} alt="User" />
         </span>
         <svg
-          className={`hidden fill-current sm:block ${dropdownOpen ? "rotate-180" : ""
-            }`}
+          className={`hidden fill-current sm:block ${
+            dropdownOpen ? "rotate-180" : ""
+          }`}
           width="12"
           height="8"
           viewBox="0 0 12 8"
@@ -85,8 +86,9 @@ const DropdownUser = ({ userName, userCompany }) => {
         ref={dropdown}
         onFocus={() => setDropdownOpen(true)}
         onBlur={() => setDropdownOpen(false)}
-        className={`absolute right-0 mt-4 flex w-62.5 flex-col rounded-b-3xl border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark ${dropdownOpen === true ? "block" : "hidden"
-          }`}
+        className={`absolute right-0 mt-4 flex w-62.5 flex-col rounded-b-3xl border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark ${
+          dropdownOpen === true ? "block" : "hidden"
+        }`}
       >
         <ul className="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
           <li>
@@ -139,7 +141,10 @@ const DropdownUser = ({ userName, userCompany }) => {
             </Link>
           </li>
         </ul>
-        <button onClick={handleLogout} className="flex items-center gap-3.5 py-4 px-6 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base hover:text-orange-500">
+        <button
+          onClick={handleLogout}
+          className="flex items-center gap-3.5 py-4 px-6 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base hover:text-orange-500"
+        >
           <svg
             className="fill-current"
             width="22"

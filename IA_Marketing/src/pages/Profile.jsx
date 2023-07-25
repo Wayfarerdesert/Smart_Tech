@@ -5,7 +5,9 @@ import UserData from "../data/userData";
 
 
 
-const Profile = ({ userName, userCompany }) => {
+const Profile = () => {
+  const { userName, userSurname, userCompany } = UserData();
+
   return (
     <>
       <div>
@@ -95,6 +97,7 @@ const Profile = ({ userName, userCompany }) => {
             <div className="mt-4">
               <h3 className="mb-1.5 text-2xl font-semibold text-black dark:text-white">
                 {userName}
+                {userSurname}
               </h3>
               <p className="font-medium">{userCompany}</p>
               <div className="mx-auto mt-4.5 mb-5.5 grid max-w-94 grid-cols-3 rounded-md border border-stroke py-2.5 shadow-1 dark:border-strokedark dark:bg-[#37404F]">
@@ -132,9 +135,6 @@ const Profile = ({ userName, userCompany }) => {
               </div>
 
               <div className="mt-6.5">
-                <h4 className="mb-3.5 font-medium text-black dark:text-white">
-                  Redes sociales
-                </h4>
                 <div className="flex items-center justify-center gap-3.5">
                   <a
                     href="#"
