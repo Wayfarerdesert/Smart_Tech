@@ -117,5 +117,17 @@ const editar = (req, res) => {
     });
 }
 
+const usuario = (req, res) => {
+    const id = req.params.id;
+    dbConn.query('SELECT * FROM usuarios WHERE id = ?', id, (error, result) => {
+        if (result.length === 0) {
+            return res.send({ msg: "No se encontro ningun usuario" })
+        } else {
+            data = result[0]
+            return res.send({ data, msg: "Usuario encontrado" })
+        }
+    })
+}
 
-module.exports = { registro, usuarios, login, perfil, eliminar, editar };
+
+module.exports = { registro, usuarios, login, perfil, eliminar, editar, usuario };
