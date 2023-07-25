@@ -26,13 +26,14 @@ const SignIn = () => {
       console.log("response:", response)
 
       localStorage.setItem('token', response.data.token);
-      console.log('token', response.data.token)
-      response.data.token ? window.location.href = '/user' : alert("Email o contraseña incorrectos, intentelo de nuevo")
+      localStorage.setItem('idCliente', response.data.id)
+      console.log('idCliente', response.data.id)
+      response.data.token && response.data.id ? window.location.href = '/user' : alert("Email o contraseña incorrectos, intentelo de nuevo")
 
 
     } catch (error) {
       // inicio de sesion redirige al dashboard
-  console.error('Error en el inicio de sesión:', error.response.data.error);
+      console.error('Error en el inicio de sesión:', error.response.data.error);
     }
   };
 
