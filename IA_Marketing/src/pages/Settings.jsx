@@ -235,7 +235,7 @@ const Settings = () => {
 
                 <button className="flex ml-auto justify-end rounded bg-orange-400 py-2 px-6 font-medium text-gray hover:shadow-1 hover:bg-orange-500 hover:text-gray-200"
                 onClick={handleDownload}>
-                  <span className="mr-2">Planilla</span>
+                  <span className="mr-2">Plantilla</span>
                   <FontAwesomeIcon icon={faDownload} />
                 </button>
               </div>
