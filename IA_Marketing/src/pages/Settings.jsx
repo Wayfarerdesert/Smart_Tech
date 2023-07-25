@@ -1,5 +1,6 @@
 import Breadcrumb from "../components/Breadcrumb";
 import React, { useState } from "react";
+import PdfDownloader from "../components/pdfDownloader/PdfDownloader";
 
 const Settings = () => {
   const [loading, setLoading] = useState(false);
@@ -337,6 +338,8 @@ const Settings = () => {
             </div>
           </div>
         </div>
+
+        <PdfDownloader />
       </div>
     </>
   );
