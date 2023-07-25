@@ -1,45 +1,52 @@
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import React, { useState } from 'react';
-
+import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useState } from "react";
 
 const SignUp = () => {
-  const [empresa, setEmpresa] = useState('');
-  const [nombre, setNombre] = useState('');
-  const [apellido, setApellido] = useState('');
-  const [email, setEmail] = useState('');
-  const [contraseña, setContraseña] = useState('');
-  const [repContraseña, setRepContraseña] = useState('');
+  const [empresa, setEmpresa] = useState("");
+  const [nombre, setNombre] = useState("");
+  const [apellido, setApellido] = useState("");
+  const [email, setEmail] = useState("");
+  const [contraseña, setContraseña] = useState("");
+  const [repContraseña, setRepContraseña] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('http://localhost:5000/api/usuarios/registro', {
-      empresa,
-      nombre,
-      apellido,
-      email,
-      contraseña,
-      repContraseña
-    })
+    axios
+      .post("http://localhost:5000/api/usuarios/registro", {
+        empresa,
+        nombre,
+        apellido,
+        email,
+        contraseña,
+        repContraseña,
+      })
       .then((response) => {
-        console.log(response)
-        if (response.data.empresa && response.data.nombre && response.data.apellido && response.data.email && response.data.contraseña === response.data.repContraseña) {
-          alert("Usuario registrado correctamente")
-          window.location.href = '/SingIn';
-        }
-        else {
-          alert("Usuario no registrado, las contraseñas no coinciden o faltan campos por completar");
-          console.log(response.data.msg)
-        }
+        const isDataValid =
+          response.data.empresa &&
+          response.data.nombre &&
+          response.data.apellido &&
+          response.data.email &&
+          response.data.contraseña === response.data.repContraseña;
+
+        console.log(isDataValid);
+
+        isDataValid
+          ? (alert("Usuario registrado correctamente"),
+            (window.location.href = "/SingIn"))
+          : (alert(
+              "Usuario no registrado, las contraseñas no coinciden o faltan campos por completar"
+            ),
+            console.log(response.data.msg));
       })
       .catch((error) => {
-        console.error('Error al registrar usuario:', error);
+        console.error("Error al registrar usuario:", error);
       });
   };
   return (
     <>
-      <div className="rounded-sm bg-white shadow-default dark:bg-boxdark">
+      <div className="rounded-sm bg-white shadow-default dark:bg-boxdark h-full">
         <div className="flex flex-wrap items-center">
           <div className="hidden w-full xl:block xl:w-1/2">
             <div className="py-17.5 px-26 text-center">
@@ -185,10 +192,10 @@ const SignUp = () => {
             </div>
           </div>
 
-          <div className="w-full border-stroke dark:border-strokedark xl:w-1/2 xl:border-l-2 mt-36 pr-24 pl-10">
+          <div className="w-full border-stroke dark:border-strokedark xl:w-1/2 xl:border-l-2 mt-52 pr-24 pl-10">
             <div className="w-full p-4 sm:p-12.5 xl:p-17.5">
               <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2 text-center">
-                Crea tu cuenta de Smart Tech
+                Crea tu cuenta Smart Tech
               </h2>
 
               <form onSubmit={handleSubmit}>
@@ -198,7 +205,8 @@ const SignUp = () => {
                   </label>
                   <div className="relative">
                     <input
-                      value={empresa} onChange={(e) => setEmpresa(e.target.value)}
+                      value={empresa}
+                      onChange={(e) => setEmpresa(e.target.value)}
                       type="text"
                       placeholder="nombre de tu empresa"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
@@ -234,7 +242,8 @@ const SignUp = () => {
                   </label>
                   <div className="relative">
                     <input
-                      value={nombre} onChange={(e) => setNombre(e.target.value)}
+                      value={nombre}
+                      onChange={(e) => setNombre(e.target.value)}
                       type="text"
                       placeholder="tu nombre"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
@@ -270,7 +279,8 @@ const SignUp = () => {
                   </label>
                   <div className="relative">
                     <input
-                      value={apellido} onChange={(e) => setApellido(e.target.value)}
+                      value={apellido}
+                      onChange={(e) => setApellido(e.target.value)}
                       type="text"
                       placeholder="tu apellido"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
@@ -307,7 +317,8 @@ const SignUp = () => {
                   </label>
                   <div className="relative">
                     <input
-                      value={email} onChange={(e) => setEmail(e.target.value)}
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       type="email"
                       placeholder="Escribe tu email"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
@@ -340,7 +351,8 @@ const SignUp = () => {
                   </label>
                   <div className="relative">
                     <input
-                      value={contraseña} onChange={(e) => setContraseña(e.target.value)}
+                      value={contraseña}
+                      onChange={(e) => setContraseña(e.target.value)}
                       type="password"
                       placeholder="tu contraseña"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"
@@ -377,7 +389,8 @@ const SignUp = () => {
                   </label>
                   <div className="relative">
                     <input
-                      value={repContraseña} onChange={(e) => setRepContraseña(e.target.value)}
+                      value={repContraseña}
+                      onChange={(e) => setRepContraseña(e.target.value)}
                       type="password"
                       placeholder="Vuelve a ingresar tu contraseña"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 focus:border-warning focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-warning"

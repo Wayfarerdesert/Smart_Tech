@@ -12,7 +12,7 @@ const Breadcrumb = ({ pageName }) => {
           <li>
             <Link to="/user">Dashboard /</Link>
           </li>
-          <li className="text-warning">{pageName}</li>
+          <li className="text-orange-500">{pageName}</li>
         </ol>
       </nav>
     </div>

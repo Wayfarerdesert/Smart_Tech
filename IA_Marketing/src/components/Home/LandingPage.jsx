@@ -1,13 +1,6 @@
-// import { useEffect, useState } from "react";
-// import { aboutUs } from "../data/about";
+import { aboutUs } from "../../data/smartTech";
 
 export default function Home() {
-  //   const [data, setData] = useState("");
-
-  //   useEffect(() => {
-  //     setData(aboutUs);
-  //   }, []);
-
   return (
     <main className="container m-auto px-10 pt-32 h-fit ">
       <div>
@@ -32,24 +25,16 @@ export default function Home() {
             ></img>
 
             <div>
-              <h1 className="font-mono text-center font-bold text-5xl mb-10 mt-20 ">
-                Quienes somos
-              </h1>
-
-              <p className="text-justify text-1xl">
-                En Smart Tech, nos apasiona el poder de los datos y la
-                tecnología para impulsar estrategias de marketing efectivas.
-                Somos una empresa líder en análisis de nicho de consumidores,
-                especializada en proporcionar insights profundos y precisos que
-                permiten a nuestros clientes tomar decisiones informadas.
-                Nuestro equipo de expertos en análisis de datos trabaja en
-                estrecha colaboración con las empresas para comprender su
-                audiencia objetivo. Mediante el uso de técnicas avanzadas de
-                recopilación y análisis de datos, desentrañamos los patrones y
-                comportamientos de los consumidores en diferentes nichos. A
-                partir de los resultados de nuestros análisis detallados,
-                ofrecemos recomendaciones personalizadas y estratégicas.
-              </p>
+              {aboutUs.map((about) => (
+                <div key={about.id}>
+                  <h1 className="font-mono text-center font-bold text-5xl mb-10 mt-20">
+                    {about.title}
+                  </h1>
+                  <p className="text-justify text-xl">
+                    {about.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
