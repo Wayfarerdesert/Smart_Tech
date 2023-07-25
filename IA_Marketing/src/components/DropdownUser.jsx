@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import UserOne from "../images/user/user.png";
-// import { userName, userCompany } from "../data/userData";
 import UserData from "../data/userData";
 
-const DropdownUser = () => {
+
+
+const DropdownUser = ({ userName, userCompany }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const trigger = useRef();
@@ -53,9 +54,9 @@ const DropdownUser = () => {
       >
         <span className="hidden text-right lg:block">
           <span className="block text-base font-medium text-black dark:text-white">
-            {UserData.userName}
+            {userName}
           </span>
-          <span className="block text-xs">{UserData.userCompany}</span>
+          <span className="block text-xs">{userCompany}</span>
         </span>
 
         <span className="h-12 w-12 rounded-full">

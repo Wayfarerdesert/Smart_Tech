@@ -1,6 +1,6 @@
 // import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import { BrowserRouter as Router, Routes, Route,  } from "react-router-dom"; //useLocation
+import { BrowserRouter as Router, Routes, Route, } from "react-router-dom"; //useLocation
 
 import NavBar from "./components/Home/NavBar";
 import LandingPage from "./components/Home/LandingPage";
@@ -16,7 +16,8 @@ import SignUp from "./pages/Authentication/SignUp";
 // COMPONENTEDE DEL DASHBOARD ============
 import ECommerce from "./pages/ECommerce";
 import Calendar from "./pages/Calendar";
-import Profile from "./pages/Profile";
+// import Profile from "./pages/Profile";
+import UserData from "./data/userData";
 import Settings from "./pages/Settings";
 import Settings3 from "./pages/Settings3";
 import Tables from "./pages/Tables";
@@ -38,7 +39,7 @@ function App() {
           <Route path="/user" element={<DefaultLayout />}>
             <Route index element={<ECommerce />} />
             <Route exact path="/user/calendar" element={<Calendar />} />
-            <Route exact path="/user/profile" element={<Profile />} />
+            <Route exact path="/user/profile" element={<UserData />} />
             <Route path="/user/tables" element={<Tables />} />
             <Route path="/user/settings" element={<Settings />} />
             <Route path="/user/settings3" element={<Settings3 />} />
