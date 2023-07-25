@@ -47,10 +47,12 @@ function PdfDownloader() {
       <Menu />
       {verGraficos ? <ECommerce /> : null}
       {verPDF ? (
-        <PDFViewer className="w-full h-full">
+        <PDFViewer className="w-full h-screen">
           <DocumentPDF content={<ECommerce />} />
         </PDFViewer>
       ) : null}
+
+      
     </div>
   );
 }
