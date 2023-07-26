@@ -106,16 +106,22 @@ const eliminar = (req, res) => {
 const editar = (req, res) => {
     const id = req.params.id;
     const { empresa, nombre, apellido } = req.body;
-    dbConn.query('UPDATE usuarios SET empresa = ?, nombre = ?, apellido = ? WHERE id = ?', [empresa, nombre, apellido, id], (error, result) => {
-        //console.log(result)
+
+    dbConn.query('SELECT * FROM usuarios WHERE id = ?', [id], (error, result) => {
         if (error) throw error;
-        else if (result.affectedRows === 0) {
-            return res.send({ msg: "Usuario no encontrado" })
+        if (result.length === 0) {
+            return res.send({ msg: "Usuario no encontrado" });
         } else {
-            return res.send({ msg: "Usuario actualizado correctamente" });
+            if (empresa && nombre && apellido) {
+                dbConn.query('UPDATE usuarios SET empresa = ?, nombre = ?, apellido = ? WHERE id = ?', [empresa, nombre, apellido, id], (error, result) => {
+                    if (error) throw error;
+                    res.status(200).json({ msg: "Usuario actualizado correctamente" });
+                });
+            } else return res.send({ msg: "Complete todos los campos" })
         }
     });
-}
+};
+
 
 const usuario = (req, res) => {
     const id = req.params.id;
