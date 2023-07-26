@@ -24,20 +24,20 @@ const SignUp = () => {
       })
       .then((response) => {
         const isDataValid =
-          response.data.empresa &&
-          response.data.nombre &&
-          response.data.apellido &&
-          response.data.email &&
-          response.data.contraseña === response.data.repContraseña;
+          empresa &&
+          nombre &&
+          apellido &&
+          email &&
+          contraseña === repContraseña;
 
         console.log(isDataValid);
 
         isDataValid
           ? (alert("Usuario registrado correctamente"),
-            (window.location.href = "/SingIn"))
+            (window.location.href = "/SignIn"))
           : (alert(
-              "Usuario no registrado, las contraseñas no coinciden o faltan campos por completar"
-            ),
+            "Usuario no registrado, las contraseñas no coinciden o faltan campos por completar"
+          ),
             console.log(response.data.msg));
       })
       .catch((error) => {
