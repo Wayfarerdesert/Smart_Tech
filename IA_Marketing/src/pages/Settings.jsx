@@ -1,6 +1,5 @@
 import Breadcrumb from "../components/Breadcrumb";
 import React, { useState } from "react";
-import PdfDownloader from "../components/pdfDownloader/PdfDownloader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
@@ -351,8 +350,6 @@ const Settings = () => {
             </div>
           </div>
         </div>
-
-        <PdfDownloader />
       </div>
     </>
   );
