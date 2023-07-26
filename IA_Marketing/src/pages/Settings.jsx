@@ -15,6 +15,7 @@ const Settings = () => {
 
 //enlaces botones
 
+
   const handleDownload = () => {
     const xlsxURL = '../../public/spreadsheet/FILE_plantilla.xlsx';
     window.open(xlsxURL, '_blank');
