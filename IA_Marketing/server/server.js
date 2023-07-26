@@ -1,24 +1,25 @@
-import express from 'express';
-// const express = require('express');
-import cors from 'cors';
-// const cors = require('cors');
-import multer from 'multer';
-// const multer = require('multer');
-import path from 'path';
-// const path = require('path');
-import fs from 'fs';
-// const fs = require('fs');
-import { spawn } from 'child_process';
-// const { spawn } = require('child_process');
+// import express from 'express';
+const express = require('express');
+// import cors from 'cors';
+const cors = require('cors');
+// import multer from 'multer';
+const multer = require('multer');
+// import path from 'path';
+const path = require('path');
+// import fs from 'fs';
+const fs = require('fs');
+// import { spawn } from 'child_process';
+const { spawn } = require('child_process');
 
-const __dirname = 'uploads';
+// const __dirname = 'uploads';
 const app = express();
 app.use(cors()); // Habilita el middleware cors para todas las rutas
 
 
+
 // *** - eva
-// Configuración CORS
-// const allowedOrigins = ['http://localhost:3000', 'http://localhost:5173'];
+// // Configuración CORS
+// const allowedOrigins = ['http://localhost:5100', 'http://localhost:5173'];
 // app.use(cors({
 //   origin: function (origin, callback) {
 //     if (allowedOrigins.includes(origin)) {
@@ -60,7 +61,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
 // Ruta para obtener la lista de archivos en el directorio "uploads"
 app.get('/api/files', (req, res) => {
   // Agregar el encabezado Access-Control-Allow-Origin a la respuesta
-   res.header('Access-Control-Allow-Origin', 'http://localhost:5174');
+   res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
  
  const directoryPath = path.join(__dirname, 'uploads');
  fs.readdir(directoryPath, (error, files) => {
@@ -103,6 +104,6 @@ app.get('/open-file/:filename', (req, res) => {
 
 // Iniciar el servidor
 
-app.listen(5000, () => {
-  console.log('Servidor en ejecución en el puerto 5000');
+app.listen(5100, () => {
+  console.log('Servidor en ejecución en el puerto 5100');
 });

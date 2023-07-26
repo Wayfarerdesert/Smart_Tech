@@ -9,7 +9,7 @@ const FileDrop = () => {
     formData.append('file', file);
 
     // Enviar el archivo al servidor
-    fetch('http://localhost:5000/upload', {
+    fetch('http://localhost:5100/upload', {
       method: 'POST',
       body: formData,
     })

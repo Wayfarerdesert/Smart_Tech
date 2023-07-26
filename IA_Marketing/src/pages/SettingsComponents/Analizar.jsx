@@ -27,7 +27,7 @@ const Analizar = () => {
     AnalyzeButton();
     
     const script = document.createElement('script');
-    script.src = 'Ascript.js';
+    // script.src = 'Ascript.js';
     script.defer = true;
     document.body.appendChild(script);
 

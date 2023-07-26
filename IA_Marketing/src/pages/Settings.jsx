@@ -2,127 +2,124 @@ import Breadcrumb from "../components/Breadcrumb";
 import FileDrop from "./SettingsComponents/FileDrop";
 import FileSelect from "./SettingsComponents/FileSelect";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload , faUpload} from "@fortawesome/free-solid-svg-icons";
-import { Link } from 'react-router-dom';
+import { faDownload, faUpload } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 // import Analyze from "./SettingsComponents/Analyze";
-
 
 import React, { useState } from "react"; //
 import Analizar from "./SettingsComponents/Analizar";
 
 const Settings = () => {
-
-//enlaces botones
-
+  //enlaces botones
 
   const handleDownload = () => {
-    const xlsxURL = '../../public/spreadsheet/FILE_01_75432.xlsx';
-    window.open(xlsxURL, '_blank');
+    const xlsxURL = "../../public/spreadsheet/FILE_01_75432.xlsx";
+    window.open(xlsxURL, "_blank");
   };
   const handleDownloadPDF = () => {
-    const pdfURL = '../../public/spreadsheet/instrucciones_Excel.pdf';
-    window.open(pdfURL, '_blank');
+    const pdfURL = "../../public/spreadsheet/instrucciones_Excel.pdf";
+    window.open(pdfURL, "_blank");
   };
-
-
 
   return (
     <>
       <div className="mx-auto max-w-270">
         <Breadcrumb pageName="Mis Archivos" />
 
-          {/* <h1>hOLI</h1> */}
+        {/* <h1>hOLI</h1> */}
 
-          <div className="mt-3  md:gap-6 2xl:gap-7.5">
-            <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
-              <h1 className="text-xl font-semibold text-black dark:text-white">
-              Cargar Archivos
-              </h1>
-                <div className="p-10 w-full">
-                      <FileDrop/>
-                </div>
-
-                <div className="flex justify-end">
-                  <Link to="/user/Settings">
-                  <button
-                    className="flex justify-center rounded bg-orange-400 py-2 px-6 font-medium text-white hover:bg-opacity-70" type="submit"
-                  >
-                    <span className="mr-2">Enviar</span>
-                    <FontAwesomeIcon icon={faUpload} />
-                  </button>
-                  </Link>
-                </div>
-            </div>
-          </div>
-
-          <div className="mt-3  md:gap-6 2xl:gap-7.5">
-            <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
-              <h1 className="text-xl font-semibold text-black dark:text-white">
-                Plantilla Excel</h1>
-                <div className="p-10 w-full">
-                
-                  <p className="leading-relaxed">
-                    <h2>Te ofrecemos nuestra plantilla para descargar en formato Excel para optimizar el procesado de tus datos de manera eficiente y precisa. También te proporcionamos un documento PDF con las instrucciones detalladas para rellenarla</h2>
-                  </p>
-                  <br></br>
-                    <div className="flex">
-                        <button className="ml-auto flex justify-center rounded bg-orange-400 py-2 px-6 font-medium text-white hover:shadow-1 hover:bg-orange-500 hover:text-gray-200"
-                          onClick={handleDownloadPDF}>
-                          <span className="mr-2">Instrucciones PDF</span>
-                          <FontAwesomeIcon icon={faDownload} />
-                        </button>
-                        <button className="ml-2 flex justify-center rounded bg-orange-400 py-2 px-6 font-medium text-white hover:shadow-1 hover:bg-orange-500 hover:text-gray-200"
-                          onClick={handleDownload}>
-                          <span className="mr-2">Plantilla Excel</span>
-                          <FontAwesomeIcon icon={faDownload} />
-                        </button>
-                    </div>
-                  </div>
-            </div>
-          </div>
-
-          <div className="mt-3 md:gap-6 2xl:gap-7.5">
-            <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
+        <div className="mt-3  md:gap-6 2xl:gap-7.5">
+          <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
             <h1 className="text-xl font-semibold text-black dark:text-white">
-            Seleccionar Archivos
+              Cargar Archivos
             </h1>
-              <div className="p-10 w-full">
-                    {/* <FileSelect/>  */}
+            <div className="p-10 w-full">
+              <FileDrop />
+              <FileSelect />
+            </div>
 
+            <div className="flex justify-end">
+              <Link to="/user/Settings">
+                <button
+                  className="flex justify-center rounded bg-orange-400 py-2 px-6 font-medium text-white hover:bg-opacity-70"
+                  type="submit"
+                >
+                  <span className="mr-2">Enviar</span>
+                  <FontAwesomeIcon icon={faUpload} />
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-3  md:gap-6 2xl:gap-7.5">
+          <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
+            <h1 className="text-xl font-semibold text-black dark:text-white">
+              Plantilla Excel
+            </h1>
+            <div className="p-10 w-full">
+              <h2>
+                Te ofrecemos nuestra plantilla para descargar en formato Excel
+                para optimizar el procesado de tus datos de manera eficiente y
+                precisa. También te proporcionamos un documento PDF con las
+                instrucciones detalladas para rellenarla
+              </h2>
+              <br></br>
+              <div className="flex">
+                <button
+                  className="ml-auto flex justify-center rounded bg-orange-400 py-2 px-6 font-medium text-white hover:shadow-1 hover:bg-orange-500 hover:text-gray-200"
+                  onClick={handleDownloadPDF}
+                >
+                  <span className="mr-2">Instrucciones PDF</span>
+                  <FontAwesomeIcon icon={faDownload} />
+                </button>
+                <button
+                  className="ml-2 flex justify-center rounded bg-orange-400 py-2 px-6 font-medium text-white hover:shadow-1 hover:bg-orange-500 hover:text-gray-200"
+                  onClick={handleDownload}
+                >
+                  <span className="mr-2">Plantilla Excel</span>
+                  <FontAwesomeIcon icon={faDownload} />
+                </button>
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="mt-3 md:gap-6 2xl:gap-7.5">
-            <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
-              <h1 className="text-xl font-semibold text-black dark:text-white">
+        <div className="mt-3 md:gap-6 2xl:gap-7.5">
+          <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
+            <h1 className="text-xl font-semibold text-black dark:text-white">
+              Seleccionar Archivos
+            </h1>
+            <div className="p-10 w-full">{/* <FileSelect/>  */}</div>
+          </div>
+        </div>
+
+        <div className="mt-3 md:gap-6 2xl:gap-7.5">
+          <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
+            <h1 className="text-xl font-semibold text-black dark:text-white">
               Analizar Archivos
-              </h1>
-                <div className="p-10 w-full">
-                      <Analizar/>
-                </div>
+            </h1>
+            <div className="p-10 w-full">
+              <Analizar />
             </div>
           </div>
-
-
+        </div>
       </div>
-
     </>
   );
 };
 
 export default Settings;
 
-
 //**** código original plantilla comentado aquí debajo
 
+{
+  /* Form Info personal */
+}
 
-
-                              {/* Form Info personal */}
-
-
-        {/* <div className="grid grid-cols-5 gap-8">
+{
+  /* <div className="grid grid-cols-5 gap-8">
           <div className="col-span-5 xl:col-span-3">
             <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
               <div className="border-b border-stroke py-4 px-7 dark:border-strokedark">
@@ -315,12 +312,15 @@ export default Settings;
                 </form>
               </div>
             </div>
-          </div> */}
+          </div> */
+}
 
-                              {/* Ventas anuales */}
+{
+  /* Ventas anuales */
+}
 
-
-          {/* <div className="col-span-5 xl:col-span-2">
+{
+  /* <div className="col-span-5 xl:col-span-2">
             <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
               <div className="border-b border-stroke py-4 px-7 dark:border-strokedark">
                 <h3 className="font-medium text-black dark:text-white">
@@ -402,11 +402,15 @@ export default Settings;
                   </div>
                 </form>
               </div>
-            </div> */}
+            </div> */
+}
 
-                              {/* Seleccionar */}
+{
+  /* Seleccionar */
+}
 
-            {/* <div className="bg-gray-400 m-5 p-10 items-center">
+{
+  /* <div className="bg-gray-400 m-5 p-10 items-center">
               <label htmlFor="dropdown">Selecciona un fichero:</label>
               <select
                 id="dropdown"
@@ -416,18 +420,22 @@ export default Settings;
                 <option value="fichero1">Fichero 1</option>
                 <option value="fichero2">Fichero 2</option>
                 <option value="fichero3">Fichero 3</option>
-              </select> */}
+              </select> */
+}
 
-              {/* <button
+{
+  /* <button
                 className={`bg-blue-500 text-white px-4 py-2 my-3 rounded ${
                   loading ? "opacity-50 cursor-not-allowed" : ""
                 }`}
                 onClick={!loading ? AnalyzeButton : null}
               >
                 {loading ? "Analizando..." : "Analizar"}
-              </button> */}
+              </button> */
+}
 
-              {/* <button
+{
+  /* <button
                 className={`bg-blue-500 text-white px-4 py-2 rounded my-3 ${
                   loading ? "opacity-50 cursor-not-allowed" : ""
                 }`}
@@ -446,5 +454,5 @@ export default Settings;
               </button>
             </div>
           </div>
-        </div>*/}
-      
+        </div>*/
+}

@@ -6,7 +6,7 @@ const FileSelect = () => {
   const [selectedFile, setSelectedFile] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/files')
+    fetch('http://localhost:5100/api/files')
       .then((response) => response.json())
       .then((data) => {
         setFileList(data);
@@ -27,7 +27,7 @@ const FileSelect = () => {
       // formData.append('file', selectedFile);
 
 
-      const url = 'http://localhost:5000/open-file/'+selectedFile;
+      const url = 'http://localhost:5100/open-file/'+selectedFile;
       fetch(url, {
         method: 'GET',
         // body: formData,
