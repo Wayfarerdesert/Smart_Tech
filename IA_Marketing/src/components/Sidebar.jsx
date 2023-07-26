@@ -200,7 +200,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
               {/* <!-- Menu Item Tables --> */}
               <li>
                 <NavLink
-                  to="/user/tables"
+                  to="/user/prediction"
                   className={`group relative flex items-center gap-2.5 rounded py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-orange-400 hover:text-gray-50 dark:hover:bg-meta-4 ${
                     pathname.includes("tables") && "bg-graydark dark:bg-meta-4"
                   }`}

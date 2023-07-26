@@ -3,7 +3,7 @@ import TableOne from '../components/TableOne';
 import TableThree from '../components/TableThree';
 import TableTwo from '../components/TableTwo';
 
-const Tables = () => {
+const Prediction = () => {
   return (
     <>
       <Breadcrumb pageName="Predicciones" />
@@ -17,4 +17,4 @@ const Tables = () => {
   );
 };
 
-export default Tables;
+export default Prediction;

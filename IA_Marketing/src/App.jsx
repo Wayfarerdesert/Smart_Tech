@@ -18,8 +18,8 @@ import ECommerce from "./pages/ECommerce";
 import Calendar from "./pages/Calendar";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
-import Settings1 from "./pages/Settings1";
-import Tables from "./pages/Tables";
+import Prediction from "./pages/Prediction";
+
 import DefaultLayout from "./layout/DefaultLayout";
 
 function App() {
@@ -42,9 +42,7 @@ function App() {
             <Route path="/user/charts" element={<ECommerce />} />
 
             <Route path="/user/calendar" element={<Calendar />} />
-            <Route path="/user/tables" element={<Tables />} />
-
-            <Route path="/user/settings3" element={<Settings3 />} />
+            <Route path="/user/prediction" element={<Prediction />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />
