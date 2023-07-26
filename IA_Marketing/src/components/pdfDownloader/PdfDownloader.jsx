@@ -1,6 +1,6 @@
 import React from "react";
 import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
-import DocumentPDF from "./DocumentPdf";
+// import DocumentPDF from "./DocumentPdf";
 import ECommerce from "../../pages/ECommerce";
 
 function PdfDownloader() {
@@ -32,7 +32,7 @@ function PdfDownloader() {
       </button>
 
       <PDFDownloadLink
-        document={<DocumentPDF content={<ECommerce />} />}
+        // document={<DocumentPDF content={<ECommerce />} />}
         fileName="ecommerce.pdf"
       >
         <button className="bg-green-500 p-3 m-2 rounded-xl" variant="info">
@@ -48,11 +48,9 @@ function PdfDownloader() {
       {verGraficos ? <ECommerce /> : null}
       {verPDF ? (
         <PDFViewer className="w-full h-screen">
-          <DocumentPDF content={<ECommerce />} />
+          {/* <DocumentPDF content={<ECommerce />} /> */}
         </PDFViewer>
       ) : null}
-
-      
     </div>
   );
 }

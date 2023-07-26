@@ -15,8 +15,7 @@ const DocumentPDF = ({ graphics }) => {
             padding: 10,
           }}
         >
-          {/* Render the content from the ECommerce component */}
-          <ECommerce />
+          { graphics }
         </View>
       </Page>
     </Document>
