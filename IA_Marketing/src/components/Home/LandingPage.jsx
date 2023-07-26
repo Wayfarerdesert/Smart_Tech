@@ -7,32 +7,28 @@ export default function Home() {
         <div className="flex items-center justify-center">
           <img
             src="../public/img/logo/2023-07-07_19-04.png"
-            className="my-16 pt-8"
+            className="my-16 pt-8 w-180"
           ></img>
-          <span className="text-orange-500 ont-mono text-center font-bold text-5xl mb-10 mt-20 pr-7">
-            :
-          </span>
-          <h1 className="font-mono text-center font-bold text-5xl mb-10 mt-24 text-md-3xl">
-            Datos, Tecnología, Resultados
-          </h1>
         </div>
+
+        <h1 className="font-mono text-center font-bold text-5xl mb-10 text-md-3xl">
+          Datos, Tecnología, Resultados
+        </h1>
 
         <div>
           <div className="flex items-center justify-center">
-            <img
+            {/* <img
               src="../public/img/home/social-media-marketing.png"
               className="my-16 mr-16 pt-8 w-96"
-            ></img>
+            ></img> */}
 
-            <div>
+            <div className="w-2/4">
               {aboutUs.map((about) => (
                 <div key={about.id}>
                   <h1 className="font-mono text-center font-bold text-5xl mb-10 mt-20">
                     {about.title}
                   </h1>
-                  <p className="text-justify text-xl">
-                    {about.description}
-                  </p>
+                  <p className="text-justify text-2xl">{about.description}</p>
                 </div>
               ))}
             </div>

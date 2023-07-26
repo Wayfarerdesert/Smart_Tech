@@ -1,5 +1,8 @@
 import { people, team } from "../../data/smartTech";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
 export default function Team() {
   return (
     <div className="py-15 sm:py-32 h-full mb-32 flex-grow" id="team">
@@ -28,6 +31,16 @@ export default function Team() {
                 <p className="text-sm font-semibold leading-6 text-orange-400">
                   {person.role}
                 </p>
+                <a
+                  href={person.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    className="text-3xl text-zinc-500 hover:text-orange-500 transition-colors duration-300 cursor-pointer"
+                  />
+                </a>
                 <p className="text-justify px-10 lg:px-28 py-4">
                   {person.about}
                 </p>

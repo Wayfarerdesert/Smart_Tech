@@ -15,6 +15,7 @@ const people = [
         name: "Eva Huertas",
         role: "Frontend",
         image: "../public/img/team/1680077507534.jpg",
+        linkedin: "https://www.linkedin.com/in/evahuertas/",
         about:
             "Nuestra diseñadora UX y parte del equipo frontend, es talentosa en el ámbito del diseño y la programación. Su enfoque meticuloso y centrado en el usuario le permite comprender las necesidades y deseos de los usuarios finales, traduciéndolos en soluciones de diseño intuitivas y atractivas. Es una maestra en la creación de diseños responsivos y adaptables, asegurándose de que nuestras interfaces se vean y funcionen perfectamente en diferentes dispositivos y tamaños de pantalla.",
     },
@@ -22,6 +23,7 @@ const people = [
         name: "Facundo Santana",
         role: "Frontend",
         image: "../public/img/team/1679238015203_f.jpg",
+        linkedin: "https://www.linkedin.com/in/facundo-santana/",
         about:
             "Nuestro experto en frontend es un apasionado del diseño y la usabilidad. Con habilidades excepcionales en HTML, CSS y JavaScript, este miembro del equipo transforma conceptos en interfaces de usuario atractivas y altamente funcionales. Su enfoque centrado en el usuario garantiza que cada interacción sea intuitiva y agradable.",
     },
@@ -29,6 +31,7 @@ const people = [
         name: "Lourdes Bonucci",
         role: "Backend",
         image: "../public/img/team/1680598483639_l.jpg",
+        linkedin: "https://www.linkedin.com/in/lbonu/",
         about:
             "Nuestra gurú del backend es una desarrolladora experimentada que domina los lenguajes de programación y las tecnologías de servidor. Con una profunda comprensión de la arquitectura y la seguridad, este miembro del equipo construye sistemas robustos y escalables. Su experiencia garantiza que los servidores y bases de datos funcionen de manera eficiente y confiable.",
     },
@@ -36,6 +39,7 @@ const people = [
         name: "Carmen Cristini",
         role: "Data Science",
         image: "../public/img/team/1684922168233_c.jpg",
+        linkedin: "https://www.linkedin.com/in/carmen-cristini/",
         about:
             "Nuestra científico de datos es una experta en el análisis y la interpretación de grandes conjuntos de datos. Con sólidos conocimientos en estadísticas y algoritmos, este miembro del equipo descubre patrones ocultos y tendencias significativas. Su experiencia en machine learning y data mining permite obtener información valiosa que impulsa la toma de decisiones estratégicas.",
     },

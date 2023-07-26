@@ -28,7 +28,7 @@ const SignIn = () => {
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('idCliente', response.data.id)
       console.log('idCliente', response.data.id)
-      response.data.token && response.data.id ? window.location.href = '/user' : alert("Email o contraseña incorrectos, intentelo de nuevo")
+      response.data.token && response.data.id ? window.location.href = '/user/profile' : alert("Email o contraseña incorrectos, intentelo de nuevo")
 
 
     } catch (error) {

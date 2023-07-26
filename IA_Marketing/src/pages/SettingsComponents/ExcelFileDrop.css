@@ -1,5 +1,6 @@
 .dropzone {
-    border: 2px dashed #ccc;
+  
+    border: 2px dashed  orange; /* #F7A400 #ccc */
     padding: 20px;
     text-align: center;
     cursor: pointer;

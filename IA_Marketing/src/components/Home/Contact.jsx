@@ -36,7 +36,7 @@ export default function ContactForm() {
 
       <form
         id="form"
-        className="text-center shadow-md rounded-3xl px-8 py-16 m-4 min-w-fit sm:max-w-m h-fit bg-orange-300"
+        className="text-center shadow-lg rounded-3xl px-8 py-16 m-4 min-w-fit sm:max-w-m h-fit"
         style={{ width: "100%", maxWidth: "300px" }}
         onSubmit={sendEmail}
       >
