@@ -47,7 +47,7 @@ const FileSelect = () => {
       <h2 className="my-3">Selecciona un archivo:</h2>
       <div className="flex items-center">
         <select
-          className="text-center p-2 rounded-lg"
+          className="text-center p-2 rounded-lg cursor-pointer"
           value={selectedFile}
           onChange={handleFileSelect}
         >
