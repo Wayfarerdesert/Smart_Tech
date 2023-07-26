@@ -350,8 +350,6 @@ const Settings = () => {
             </div>
           </div>
         </div>
-
-        <PdfDownloader />
       </div>
     </>
   );
