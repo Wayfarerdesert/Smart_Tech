@@ -17,7 +17,7 @@ const UserData = () => {
         const response = await axios.get(
           `http://localhost:5000/api/usuarios/usuario/${idCliente}`
         );
-        console.log("Nombre de Empresa:", response.data.data.empresa);
+        // console.log("Nombre de Empresa:", response.data.data.empresa);
         const empresa = response.data.data.empresa;
         const nombre = response.data.data.nombre;
         const apellido = response.data.data.apellido;
