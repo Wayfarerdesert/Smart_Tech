@@ -18,8 +18,8 @@ import ECommerce from "./pages/ECommerce";
 import Calendar from "./pages/Calendar";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
-import Settings3 from "./pages/Settings3";
-import Tables from "./pages/Prediction";
+import Settings1 from "./pages/Settings1";
+import Tables from "./pages/Tables";
 import DefaultLayout from "./layout/DefaultLayout";
 
 function App() {
