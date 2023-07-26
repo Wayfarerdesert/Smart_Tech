@@ -1,18 +1,20 @@
 .dropzone {
-  
-    border: 2px dashed  orange; /* #F7A400 #ccc */
-    padding: 20px;
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  .dropzone.active {
-    border-color: orange;
-    background-color: lightgray;
-  }
-  
-  .dropzone p {
-    font-size: 16px;
-    margin: 0;
-  }
-  
+  border: 3px dashed orange;
+  /* #F7A400 #ccc */
+  padding: 80px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dropzone.active {
+  border-color: orange;
+  background-color: lightgray;
+}
+
+.dropzone p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.dropzone:hover {
+  border: 3px dashed rgb(253, 201, 103);}

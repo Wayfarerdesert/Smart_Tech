@@ -3,12 +3,26 @@ import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, redirect, useLocation } from "react-router-dom";
 import DropdownUser from "../DropdownUser";
 import "../../index.css";
+import { useState, useEffect } from "react";
 
 function NavBar() {
   // Ocultar boton de login en el dashboard
   const location = useLocation();
   const isUserRoute =
     location.pathname === "/user" || location.pathname.startsWith("/user/");
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const checkUserLoginStatus = () => {
+    const token = localStorage.getItem("token"); // Replace "userToken" with the key you use to store the token
+    const userLoggedIn =
+      !!token; /* Function to check login status, true or false based on the result */
+    setIsLoggedIn(userLoggedIn);
+  };
+
+  useEffect(() => {
+    checkUserLoginStatus(); // Call the function to check the login status when the component mounts
+  }, []);
 
   // Logo redirige a home
   const redirectToHome = () => {
@@ -108,7 +122,7 @@ function NavBar() {
               </li>
             </ul>
           </div>
-          {!isUserRoute && (
+          {!isLoggedIn && (
             <NavLink
               to="/SignIn"
               className="flex nav-link rounded p-2 hover:bg-orange-400 hover:text-orange-200 hover cursor-pointer"
@@ -124,7 +138,7 @@ function NavBar() {
             </NavLink>
           )}
 
-          {isUserRoute && <DropdownUser />}
+          {isLoggedIn && <DropdownUser />}
         </div>
       </nav>
     </div>

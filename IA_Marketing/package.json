@@ -57,6 +57,7 @@
     "react-dropzone": "^14.2.3",
     "react-pro-sidebar": "^1.1.0-alpha.1",
     "react-router-dom": "^6.14.1",
+    "react-spinners": "^0.13.8",
     "yup": "^1.2.0"
   },
   "devDependencies": {

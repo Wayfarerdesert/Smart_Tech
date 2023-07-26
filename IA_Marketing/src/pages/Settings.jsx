@@ -1,17 +1,20 @@
+import React, { useState } from "react"; //
 import Breadcrumb from "../components/Breadcrumb";
 import FileDrop from "./SettingsComponents/FileDrop";
 import FileSelect from "./SettingsComponents/FileSelect";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload, faUpload } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { PulseLoader, RingLoader, PacmanLoader } from "react-spinners"; // Importamos el spinner
 
 // import Analyze from "./SettingsComponents/Analyze";
 
-import React, { useState } from "react"; //
 import Analizar from "./SettingsComponents/Analizar";
 
 const Settings = () => {
-  //enlaces botones
+  // //enlaces botones
+  // const [analyzing, setAnalyzing] = useState(false);
+  // const [analysisCompleted, setAnalysisCompleted] = useState(false);
 
   const handleDownload = () => {
     const xlsxURL = "../../public/spreadsheet/FILE_01_75432.xlsx";
@@ -21,6 +24,16 @@ const Settings = () => {
     const pdfURL = "../../public/spreadsheet/instrucciones_Excel.pdf";
     window.open(pdfURL, "_blank");
   };
+
+  // const handleAnalyze = () => {
+  //   // Aquí realizarías las acciones de análisis de archivos
+  //   // Por ahora, solo simularemos un retraso para mostrar el spinner
+  //   setAnalyzing(true);
+  //   setTimeout(() => {
+  //     setAnalyzing(false);
+  //     setAnalysisCompleted(true);
+  //   }, 5000);
+  // };
 
   return (
     <>
@@ -104,16 +117,37 @@ const Settings = () => {
         </div>
 
         {/* ANALIZAR DATOS */}
-        <div className="mt-3 md:gap-6 2xl:gap-7.5">
+        {/* <div className="mt-3 md:gap-6 2xl:gap-7.5">
           <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
             <h1 className="text-xl font-semibold text-black dark:text-white">
               Analizar Archivos
-            </h1>
-            <div className="p-10 w-full">
+            </h1> */}
+            {/* <div className="p-10 w-full">
               <Analizar />
+            </div> */}
+
+            {/* <div className="p-10 w-full"> */}
+              {/* Mostramos el botón o el spinner según el estado */}
+              {/* {analyzing ? (
+                <div className="flex justify-center">
+                  <PacmanLoader color="#FB923C" size={50} />
+                </div>
+              ) : analysisCompleted ? (
+                <div className="text-center text-green-600 font-semibold">
+                  Análisis realizado con éxito
+                </div>
+              ) : (
+                <button
+                  className="flex justify-center rounded bg-orange-400 py-2 px-6 font-medium text-white hover:shadow-1 hover:bg-orange-500 hover:text-gray-200"
+                  onClick={handleAnalyze}
+                >
+                  <span className="mr-2">Analizar</span>
+                  <FontAwesomeIcon icon={faUpload} />
+                </button>
+              )}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
