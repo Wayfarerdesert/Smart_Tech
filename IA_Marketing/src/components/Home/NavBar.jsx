@@ -13,7 +13,7 @@ function NavBar() {
   // Logo redirige a home
   const redirectToHome = () => {
     if (isUserRoute) {
-      window.location.href = "/user";
+      window.location.href = "/user/profile";
     } else {
       window.location.href = "/";
     }
