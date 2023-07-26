@@ -137,7 +137,7 @@ const DropdownUser = () => {
                   fill=""
                 />
               </svg>
-              Configuración
+              Mis Archivos
             </Link>
           </li>
         </ul>

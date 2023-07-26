@@ -29,7 +29,7 @@ const Settings = () => {
   return (
     <>
       <div className="mx-auto max-w-270">
-        <Breadcrumb pageName="Configuración" />
+        <Breadcrumb pageName="Mis Archivos" />
 
         <div className="grid grid-cols-5 gap-8">
           <div className="col-span-5 xl:col-span-3">
