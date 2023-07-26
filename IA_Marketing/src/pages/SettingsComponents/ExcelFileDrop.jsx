@@ -1,6 +1,5 @@
 import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import './ExcelFileDrop copy'
 
 const ExcelFileDrop = ({ onFileDrop }) => {
   const handleDrop = useCallback(
