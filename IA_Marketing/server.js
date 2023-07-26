@@ -59,24 +59,18 @@ app.post('/upload', upload.single('file'), (req, res) => {
 });
 // Ruta para obtener la lista de archivos en el directorio "uploads"
 app.get('/api/files', (req, res) => {
-   // Agregar el encabezado Access-Control-Allow-Origin a la respuesta
-  res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
-  
-  const directoryPath = path.join(__dirname, 'uploads');
-  fs.readdir(directoryPath, (error, files) => {
-    try {
-      error ?  new Error(`Error al leer el directorio ${__dirname}`) : res.json(files);
-      
-    } catch (err) {
-      console.error(err);
-    }
-    // if (error) {
-    //   console.error('Error al leer el directorio:', error);
-    //   res.status(500).json({ error: 'Error al leer el directorio' });
-    // } else {
-    //   res.json(files);
-    // }
-  });
+  // Agregar el encabezado Access-Control-Allow-Origin a la respuesta
+   res.header('Access-Control-Allow-Origin', 'http://localhost:5174');
+ 
+ const directoryPath = path.join(__dirname, 'uploads');
+ fs.readdir(directoryPath, (error, files) => {
+   if (error) {
+     console.error('Error al leer el directorio:', error);
+     res.status(500).json({ error: 'Error al leer el directorio' });
+   } else {
+     res.json(files);
+   }
+ });
 });
 
 // Ruta para abrir un archivo desde el script de Python

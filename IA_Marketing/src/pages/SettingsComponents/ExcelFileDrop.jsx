@@ -1,8 +1,6 @@
-import  { useCallback } from 'react'; //React,
+import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import './ExcelFileDrop.css' ;
-import { PropTypes } from 'prop-types';
-
+import './ExcelFileDrop copy'
 
 const ExcelFileDrop = ({ onFileDrop }) => {
   const handleDrop = useCallback(
@@ -29,17 +27,11 @@ const ExcelFileDrop = ({ onFileDrop }) => {
       {isDragActive ? (
         <p>Suelta el archivo de Excel aquí...</p>
       ) : (
-        <p>Arrastra y suelta un archivo de Excel aquí, o <span className="text-warning justify-center items-center h-full">haz clic para seleccionarlo </span><span className="mt-1.5">(solo archivos XLSX)</span> </p>
-        
+        <p>Arrastra y suelta un archivo de Excel aquí, o <span className="text-orange-400 justify-center items-center h-full">haz click para seleccionarlo.</span></p>
       )}
     </div>
   );
 };
 
-//para el error con PropTypes
-
-ExcelFileDrop.propTypesropTypes = {
-  onFileDrop: PropTypes.string.isRequired
-}
-
 export default ExcelFileDrop;
+

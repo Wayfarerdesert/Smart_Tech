@@ -1,27 +1,30 @@
 import Breadcrumb from "../components/Breadcrumb";
 import FileDrop from "./SettingsComponents/FileDrop";
 import FileSelect from "./SettingsComponents/FileSelect";
-import Analizar from "./SettingsComponents/Analizar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload , faUpload} from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom';
+
+// import Analyze from "./SettingsComponents/Analyze";
+
 
 import React, { useState } from "react"; //
+import Analizar from "./SettingsComponents/Analizar";
 
 const Settings = () => {
-  // const [loading, setLoading] = useState(false);
-  // const [statusMessage, setStatusMessage] = useState("");
 
-  // const AnalyzeButton = () => {
-  //   setLoading(true);
-  //   setStatusMessage("Leyendo...");
+//enlaces botones
 
-  //   setTimeout(() => {
-  //     setStatusMessage("Analizando...");
-  //   }, 1000);
+  const handleDownload = () => {
+    const xlsxURL = '../../public/spreadsheet/FILE_plantilla.xlsx';
+    window.open(xlsxURL, '_blank');
+  };
+  const handleDownloadPDF = () => {
+    const pdfURL = '../../public/spreadsheet/instrucciones_Excel.pdf';
+    window.open(pdfURL, '_blank');
+  };
 
-  //   setTimeout(() => {
-  //     setStatusMessage("Finalizado correctamente.");
-  //     setLoading(false);
-  //   }, 5000);
-  // };
+
 
   return (
     <>
@@ -38,6 +41,43 @@ const Settings = () => {
                 <div className="p-10 w-full">
                       <FileDrop/>
                 </div>
+
+                <div className="flex justify-end">
+                  <Link to="/user/Settings">
+                  <button
+                    className="flex justify-center rounded bg-orange-400 py-2 px-6 font-medium text-white hover:bg-opacity-70" type="submit"
+                  >
+                    <span className="mr-2">Enviar</span>
+                    <FontAwesomeIcon icon={faUpload} />
+                  </button>
+                  </Link>
+                </div>
+            </div>
+          </div>
+
+          <div className="mt-3  md:gap-6 2xl:gap-7.5">
+            <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
+              <h1 className="text-xl font-semibold text-black dark:text-white">
+                Plantilla Excel</h1>
+                <div className="p-10 w-full">
+                
+                  <p className="leading-relaxed">
+                    <h2>Te ofrecemos nuestra plantilla para descargar en formato Excel para optimizar el procesado de tus datos de manera eficiente y precisa. También te proporcionamos un documento PDF con las instrucciones detalladas para rellenarla</h2>
+                  </p>
+                  <br></br>
+                    <div className="flex">
+                        <button className="ml-auto flex justify-center rounded bg-orange-400 py-2 px-6 font-medium text-white hover:shadow-1 hover:bg-orange-500 hover:text-gray-200"
+                          onClick={handleDownloadPDF}>
+                          <span className="mr-2">Instrucciones PDF</span>
+                          <FontAwesomeIcon icon={faDownload} />
+                        </button>
+                        <button className="ml-2 flex justify-center rounded bg-orange-400 py-2 px-6 font-medium text-white hover:shadow-1 hover:bg-orange-500 hover:text-gray-200"
+                          onClick={handleDownload}>
+                          <span className="mr-2">Plantilla Excel</span>
+                          <FontAwesomeIcon icon={faDownload} />
+                        </button>
+                    </div>
+                  </div>
             </div>
           </div>
 
@@ -47,7 +87,8 @@ const Settings = () => {
             Seleccionar Archivos
             </h1>
               <div className="p-10 w-full">
-                    <FileSelect/>
+                    {/* <FileSelect/>  */}
+
               </div>
             </div>
           </div>
@@ -63,9 +104,8 @@ const Settings = () => {
             </div>
           </div>
 
-          {/* <Analizar/> */}
 
-      </div> 
+      </div>
 
     </>
   );
