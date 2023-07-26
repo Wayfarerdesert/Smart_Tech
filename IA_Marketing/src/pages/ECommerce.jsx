@@ -1,3 +1,5 @@
+import Breadcrumb from "../components/Breadcrumb";
+
 import CardFour from "../components/CardFour";
 import CardOne from "../components/CardOne";
 import CardThree from "../components/CardThree";
@@ -45,7 +47,6 @@ const ECommerce = () => {
   const chartWidth = 80;
   const chartHeight = 100;
 
-
   const exportToPDF = () => {
     console.log("Button clicked, exportToPDF function called!");
     const content = contentRef.current;
@@ -73,6 +74,17 @@ const ECommerce = () => {
 
   return (
     <>
+      <Breadcrumb pageName="Dashboard" />
+
+      <div className="my-3">
+        <button
+          className="bg-orange-400 hover:bg-orange-500 p-2 rounded-lg"
+          onClick={exportToPDF}
+        >
+          Exportar a PDF
+        </button>
+      </div>
+
       <div ref={contentRef}>
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
           <CardOne />
@@ -113,14 +125,7 @@ const ECommerce = () => {
           <Map chosenKey="world" />
         </div>
       </div>
-      <div className="text-center mt-3">
-        <button
-          className="bg-orange-400 hover:bg-orange-500 p-2 rounded-lg"
-          onClick={exportToPDF}
-        >
-          Exportar a PDF
-        </button>
-      </div>
+      
     </>
   );
 };

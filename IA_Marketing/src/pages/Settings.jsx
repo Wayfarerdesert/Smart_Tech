@@ -22,7 +22,7 @@ const Settings = () => {
   };
 
   const handleDownload = () => {
-    const xlsxURL = '../../public/spreadsheet/FILE_plantilla.xlsx';
+    const xlsxURL = '../../public/spreadsheet/FILE_01_75432.xlsx';
     window.open(xlsxURL, '_blank');
   };
 

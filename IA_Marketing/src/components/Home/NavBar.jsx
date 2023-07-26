@@ -66,7 +66,7 @@ function NavBar() {
               <li className="nav-item">
                 <NavLink
                   to="/"
-                  className="nav-link rounded hover:bg-orange-500 hover:text-orange-200 hover"
+                  className="nav-link rounded hover:bg-orange-400 hover:text-orange-200 hover"
                   aria-current="page"
                   // activeClassName="active-link"
                 >
@@ -77,7 +77,7 @@ function NavBar() {
               <li className="nav-item">
                 <NavLink
                   to="/Team"
-                  className="nav-link rounded hover:bg-orange-500 hover:text-orange-200 hover"
+                  className="nav-link rounded hover:bg-orange-400 hover:text-orange-200 hover"
                   aria-current="page"
                   // activeClassName="active-link"
                 >
@@ -88,7 +88,7 @@ function NavBar() {
               <li className="nav-item">
                 <NavLink
                   to="/PricingSection"
-                  className="nav-link rounded hover:bg-orange-500 hover:text-orange-200 hover"
+                  className="nav-link rounded hover:bg-orange-400 hover:text-orange-200 hover"
                   aria-current="page"
                   // activeClassName="active-link"
                 >
@@ -99,7 +99,7 @@ function NavBar() {
               <li className="nav-item">
                 <NavLink
                   to="/Contact"
-                  className="nav-link rounded hover:bg-orange-500 hover:text-orange-200 hover"
+                  className="nav-link rounded hover:bg-orange-400 hover:text-orange-200 hover"
                   aria-current="page"
                   // activeClassName="active-link"
                 >
@@ -111,7 +111,7 @@ function NavBar() {
           {!isUserRoute && (
             <NavLink
               to="/SignIn"
-              className="flex nav-link rounded p-2 hover:bg-orange-500 hover:text-orange-200 hover cursor-pointer"
+              className="flex nav-link rounded p-2 hover:bg-orange-400 hover:text-orange-200 hover cursor-pointer"
               aria-current="page"
               // activeClassName="active-link"
             >
