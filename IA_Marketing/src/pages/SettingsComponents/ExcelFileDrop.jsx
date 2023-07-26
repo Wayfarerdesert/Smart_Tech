@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
+import './ExcelFileDrop.css'
 
 const ExcelFileDrop = ({ onFileDrop }) => {
   const handleDrop = useCallback(

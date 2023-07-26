@@ -27,38 +27,13 @@ const Settings = () => {
       <div className="mx-auto max-w-270">
         <Breadcrumb pageName="Mis Archivos" />
 
-        {/* <h1>hOLI</h1> */}
-
-        <div className="mt-3  md:gap-6 2xl:gap-7.5">
-          <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
-            <h1 className="text-xl font-semibold text-black dark:text-white">
-              Cargar Archivos
-            </h1>
-            <div className="p-10 w-full">
-              <FileDrop />
-              <FileSelect />
-            </div>
-
-            <div className="flex justify-end">
-              <Link to="/user/Settings">
-                <button
-                  className="flex justify-center rounded bg-orange-400 py-2 px-6 font-medium text-white hover:bg-opacity-70"
-                  type="submit"
-                >
-                  <span className="mr-2">Enviar</span>
-                  <FontAwesomeIcon icon={faUpload} />
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-3  md:gap-6 2xl:gap-7.5">
+        {/* PLANTILLA DE EXEL DE REFERENCIA */}
+        <div className="mt-3">
           <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
             <h1 className="text-xl font-semibold text-black dark:text-white">
               Plantilla Excel
             </h1>
-            <div className="p-10 w-full">
+            <div className="px-10 pt-10 w-full">
               <h2>
                 Te ofrecemos nuestra plantilla para descargar en formato Excel
                 para optimizar el procesado de tus datos de manera eficiente y
@@ -66,9 +41,10 @@ const Settings = () => {
                 instrucciones detalladas para rellenarla
               </h2>
               <br></br>
-              <div className="flex">
+
+              <div className="flex justify-center mt-4">
                 <button
-                  className="ml-auto flex justify-center rounded bg-orange-400 py-2 px-6 font-medium text-white hover:shadow-1 hover:bg-orange-500 hover:text-gray-200"
+                  className="flex justify-center rounded bg-orange-400 py-2 px-6 font-medium text-white hover:shadow-1 hover:bg-orange-500 hover:text-gray-200"
                   onClick={handleDownloadPDF}
                 >
                   <span className="mr-2">Instrucciones PDF</span>
@@ -86,15 +62,48 @@ const Settings = () => {
           </div>
         </div>
 
+        {/* CARGA DE ARCHIVOS */}
+        <div className="mt-3  md:gap-6 2xl:gap-7.5">
+          <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
+            <h1 className="text-xl font-semibold text-black dark:text-white">
+              Cargar Archivos
+            </h1>
+            <div className="p-10 w-full">
+              <FileDrop />
+              {/*
+              <h1 className="text-xl font-semibold text-black dark:text-white mt-5">
+                Seleccionar Archivos
+              </h1>
+              <FileSelect /> */}
+            </div>
+
+            {/* <div className="flex justify-end">
+              <Link to="/user/Settings">
+                <button
+                  className="flex justify-center rounded bg-orange-400 py-2 px-6 font-medium text-white hover:bg-opacity-70"
+                  type="submit"
+                >
+                  <span className="mr-2">Enviar</span>
+                  <FontAwesomeIcon icon={faUpload} />
+                </button>
+              </Link>
+            </div> */}
+          </div>
+        </div>
+
+        {/* SELECCIONAR ARCHIVOS */}
         <div className="mt-3 md:gap-6 2xl:gap-7.5">
           <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
             <h1 className="text-xl font-semibold text-black dark:text-white">
               Seleccionar Archivos
             </h1>
-            <div className="p-10 w-full">{/* <FileSelect/>  */}</div>
+            <div className="p-10 w-full">
+              <FileSelect />{" "}
+            </div>
           </div>
         </div>
 
+        {/* ANALIZAR DATOS */}
         <div className="mt-3 md:gap-6 2xl:gap-7.5">
           <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
             <h1 className="text-xl font-semibold text-black dark:text-white">
