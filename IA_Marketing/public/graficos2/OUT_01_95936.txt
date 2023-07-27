@@ -1,0 +1,33 @@
+# Cluster 0:
+Este grupo representa a los clientes que compran artículos en una cantidad media de ~ 37.64 artículos. 
+Nivel de compra por cantidad de artículos: MEDIO respecto a un valor máximo de 97 y respecto a la media de los pedidos 35.09 
+
+Este grupo compran artículos en una precio medio de ~ 90.24 €. 
+Nivel de compra por precio de artículos: ALTO respecto a un valor máximo de 100.0 y respecto a la media de los pedidos 83.66 
+
+También corresponden a las ventas totales de ~ 4101.42 €. 
+Nivel de compra por ventas totales: MUY ALTO respecto a un valor máximo de 14082.8 y respecto a la media de los pedidos 3553.89 
+
+Mes de compra Marzo
+# Cluster 1:
+Este grupo representa a los clientes que compran artículos en una cantidad media de ~ 28.10 artículos. 
+Nivel de compra por cantidad de artículos: MUY BAJO respecto a un valor máximo de 97 y respecto a la media de los pedidos 35.09 
+
+Este grupo compran artículos en una precio medio de ~ 56.94 €. 
+Nivel de compra por precio de artículos: MUY ALTO respecto a un valor máximo de 100.0 y respecto a la media de los pedidos 83.66 
+
+También corresponden a las ventas totales de ~ 1520.30 €. 
+Nivel de compra por ventas totales: MUY ALTO respecto a un valor máximo de 14082.8 y respecto a la media de los pedidos 3553.89 
+
+Mes de compra Julio
+# Cluster 2:
+Este grupo representa a los clientes que compran artículos en una cantidad media de ~ 36.29 artículos. 
+Nivel de compra por cantidad de artículos: MEDIO respecto a un valor máximo de 97 y respecto a la media de los pedidos 35.09 
+
+Este grupo compran artículos en una precio medio de ~ 90.72 €. 
+Nivel de compra por precio de artículos: ALTO respecto a un valor máximo de 100.0 y respecto a la media de los pedidos 83.66 
+
+También corresponden a las ventas totales de ~ 4054.67 €. 
+Nivel de compra por ventas totales: MUY ALTO respecto a un valor máximo de 14082.8 y respecto a la media de los pedidos 3553.89 
+
+Mes de compra Octubre

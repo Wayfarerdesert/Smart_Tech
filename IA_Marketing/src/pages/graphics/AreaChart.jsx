@@ -42,8 +42,8 @@ function AreaChart() {
     ],
     datasets: [
       {
-        label: "Ventas 2022",
-        data: [12, 19, 3, 5, 2, 3, 8, 13, 6, 9, 2, 5],
+        label: "Ventas 2021",
+        data: [12, 19, 3, 5, 2, 13, 8, 13, 6, 9, 2, 5],
         backgroundColor: (context) => {
           const bgColor = "rgba(54, 162, 235, 0.2)";
           const bgColorNearStart = "rgba(54, 162, 235, 0.05)";
@@ -67,8 +67,8 @@ function AreaChart() {
         fill: true,
       },
       {
-        label: "Ventas 2023",
-        data: [5, 2, 3, 8, 12, 19, 3, 13, 6, 9, 7, 7],
+        label: "Ventas 2022",
+        data: [15, 12, 3, 8, 12, 19, 3, 13, 6, 9, 7, 7],
         backgroundColor: (context) => {
           const bgColor = "rgba(255, 99, 132, 0.2)";
           const bgColorNearStart = "rgba(255, 99, 132, 0.05)";

@@ -22,17 +22,17 @@ ChartJS.register(
 
 function RadarChart() {
   const data = {
-    labels: ["One", "Two", "Three", "Four", "Five"],
+    labels: ["America", "Asia", "Europa", "Africa", "Oceania"],
     datasets: [
       {
-        label: "# of Votes",
+        label: "2021",
         data: [12, 19, 3, 5],
         backgroundColor: ["rgba(255, 99, 132, 0.2)"],
         borderColor: ["rgba(255, 99, 132, 1)"],
         borderWidth: 1,
       },
       {
-        label: "# of Votes",
+        label: "2022",
         data: [3, 25, 13, 15, 8],
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
@@ -49,7 +49,7 @@ function RadarChart() {
   return (
     <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
       <h1 className="text-xl font-semibold text-black dark:text-white">
-        Mi Gráfico de Radar
+        Ventas por Paises
       </h1>
       <div className="p-10 w-full">
         <Radar data={data} options={options} />

@@ -39,15 +39,15 @@ function BarChartII() {
     ],
     datasets: [
       {
-        label: "Ventas 2022",
-        data: [12, 19, 3, 5, 2, 3, 8, 13, 6, 9, 2, 5],
+        label: "Ventas 2021",
+        data: [12, 19, 3, 5, 2, 13, 8, 13, 6, 9, 2, 5],
         backgroundColor: ["rgba(54, 162, 235, 0.8)"],
         borderColor: ["rgba(54, 162, 235, 1)"],
         borderWidth: 2,
       },
       {
-        label: "Ventas 2023",
-        data: [5, 2, 3, 8, 12, 19, 3, 13, 6, 9, 7, 7],
+        label: "Ventas 2022",
+        data: [15, 12, 3, 8, 12, 19, 3, 13, 6, 9, 7, 7],
         backgroundColor: ["rgba(255, 99, 132, 0.8)"],
         borderColor: ["rgba(255, 99, 132, 1)"],
         borderWidth: 2,
@@ -88,7 +88,7 @@ function BarChartII() {
   return (
     <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
       <h1 className="text-xl font-semibold text-black dark:text-white">
-        Mi Gráfico de barras
+        Comparativa 2021 / 2022
       </h1>
       <div className="p-10 w-full">
         <Bar data={data} options={options} />

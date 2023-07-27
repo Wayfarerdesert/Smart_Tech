@@ -10,7 +10,14 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 function DoughnutChart() {
   const data = {
-    labels: ["One", "Two", "Three", "Four", "Five", "Six"],
+    labels: [
+      "Pequeñas Empresas",
+      "Grandes Empresas",
+      "Particular",
+      "Autonomo",
+      "Institucionales",
+      "VIP",
+    ],
     datasets: [
       {
         label: "# of Votes",
@@ -40,10 +47,9 @@ function DoughnutChart() {
 
   return (
     <div className="col-span-5 rounded-xl border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default sm:px-7.5">
-
       <div className="mb-3 justify-between gap-4 sm:flex">
         <h1 className="text-xl font-semibold text-black dark:text-white">
-          Mi Gráfico de Dona
+          Tipo de cliente
         </h1>
 
         <div className="relative z-20 inline-block">
@@ -71,7 +77,7 @@ function DoughnutChart() {
           <div className="flex w-full items-center">
             <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-primary"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
-              <span> Desktop </span>
+              <span> Grandes Empresas </span>
               <span> 65% </span>
             </p>
           </div>
@@ -80,7 +86,7 @@ function DoughnutChart() {
           <div className="flex w-full items-center">
             <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-[#6577F3]"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
-              <span> Tablet </span>
+              <span> Autonomo </span>
               <span> 34% </span>
             </p>
           </div>
@@ -89,7 +95,7 @@ function DoughnutChart() {
           <div className="flex w-full items-center">
             <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-[#8FD0EF]"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
-              <span> Mobile </span>
+              <span> Pequeñas Empresas </span>
               <span> 45% </span>
             </p>
           </div>
@@ -98,7 +104,7 @@ function DoughnutChart() {
           <div className="flex w-full items-center">
             <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-[#0FADCF]"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
-              <span> Unknown </span>
+              <span> desconocido </span>
               <span> 12% </span>
             </p>
           </div>

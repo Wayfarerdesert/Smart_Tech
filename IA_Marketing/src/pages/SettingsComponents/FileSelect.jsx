@@ -36,7 +36,7 @@ const FileSelect = () => {
       setTimeout(() => {
         setAnalyzing(false);
         setAnalysisCompleted(true);
-      }, 5000);
+      }, 30000);
     }
   };
 
