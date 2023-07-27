@@ -1,0 +1,33 @@
+# Cluster 0:
+Este grupo representa a los clientes que compran artículos en una cantidad media de ~ 36.70 artículos. 
+Nivel de compra por cantidad de artículos: MEDIO respecto a un valor máximo de 97 y respecto a la media de los pedidos 35.09 
+
+Este grupo compran artículos en una precio medio de ~ 97.95 €. 
+Nivel de compra por precio de artículos: ALTO respecto a un valor máximo de 100.0 y respecto a la media de los pedidos 83.66 
+
+También corresponden a las ventas totales de ~ 5033.74 €. 
+Nivel de compra por ventas totales: MUY ALTO respecto a un valor máximo de 14082.8 y respecto a la media de los pedidos 3553.89 
+
+Mes de compra Julio
+# Cluster 1:
+Este grupo representa a los clientes que compran artículos en una cantidad media de ~ 28.13 artículos. 
+Nivel de compra por cantidad de artículos: MUY BAJO respecto a un valor máximo de 97 y respecto a la media de los pedidos 35.09 
+
+Este grupo compran artículos en una precio medio de ~ 56.86 €. 
+Nivel de compra por precio de artículos: MUY ALTO respecto a un valor máximo de 100.0 y respecto a la media de los pedidos 83.66 
+
+También corresponden a las ventas totales de ~ 1519.53 €. 
+Nivel de compra por ventas totales: MUY ALTO respecto a un valor máximo de 14082.8 y respecto a la media de los pedidos 3553.89 
+
+Mes de compra Julio
+# Cluster 2:
+Este grupo representa a los clientes que compran artículos en una cantidad media de ~ 37.01 artículos. 
+Nivel de compra por cantidad de artículos: MEDIO respecto a un valor máximo de 97 y respecto a la media de los pedidos 35.09 
+
+Este grupo compran artículos en una precio medio de ~ 84.52 €. 
+Nivel de compra por precio de artículos: MEDIO respecto a un valor máximo de 100.0 y respecto a la media de los pedidos 83.66 
+
+También corresponden a las ventas totales de ~ 3301.25 €. 
+Nivel de compra por ventas totales: MUY ALTO respecto a un valor máximo de 14082.8 y respecto a la media de los pedidos 3553.89 
+
+Mes de compra Junio

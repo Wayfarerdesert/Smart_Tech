@@ -5,3 +5,4 @@ http-server -p 8000 -a localhost -s -o indexUser.html
 
 # Ignorar la carpeta de configuración de Visual Studio Code
 .vscode/
+node_modules
