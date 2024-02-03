@@ -1,5 +1,7 @@
 # Smart Tech:
+
 ## Datos, Tecnología, Resultados
+
 ![Logo](./IA_Marketing/public/img/logo/2023-07-07_19-04.png)
 
 Smart Tech IA de Marketing, es un proyecto de aplicación web para maximizar el
@@ -18,6 +20,10 @@ impacto publicitario eficiente y responsable.
 ## Descripción
 
 Smart Tech IA de Marketing se centra en optimizar la publicidad de manera inteligente. Este proyecto tiene como objetivo proporcionar una plataforma eficaz y ética para maximizar la visibilidad de las campañas publicitarias.
+
+![Files](./IA_Marketing/public/README/16-23.webp)
+![Files](./IA_Marketing/public/README/16-24.webp)
+![Files](./IA_Marketing/public/README/16-26.webp)
 
 ## Tecnologías Frontend
 
@@ -77,6 +83,8 @@ Para comenzar a utilizar Smart Tech IA de Marketing, sigue estos pasos:
 4. Después de proporcionar la información requerida, la aplicación utilizará inteligencia artificial para analizar los datos históricos y prever las ventas para el próximo año. Además, se generarán gráficos pertinentes para una comprensión visual más clara.
 5. Con los resultados obtenidos, estarás listo para implementar campañas de marketing más eficientes, basadas en las proyecciones precisas de la IA.
 
+![Files](./IA_Marketing/public/README/16-32.webp)
+
 ## Contribución
 
 Si deseas contribuir al proyecto, sigue estos pasos:
@@ -86,4 +94,3 @@ Si deseas contribuir al proyecto, sigue estos pasos:
 3. Realiza tus cambios y commitea los cambios: `git commit -m 'Agregar nueva función'`
 4. Empuja la rama a tu fork: `git push origin mi-nueva-funcion`
 5. Abre un Pull Request en el repositorio original.
-
