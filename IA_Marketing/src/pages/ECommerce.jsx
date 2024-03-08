@@ -73,7 +73,7 @@ const ECommerce = () => {
   };
 
   const handleDownloadAnalisis = () => {
-    const txtURL = "../public/graficos2/OUT_01_95936.txt";
+    const txtURL = "../graficos2/OUT_01_95936.txt";
 
     const fileName = txtURL.split("/").pop();
 
@@ -85,7 +85,7 @@ const ECommerce = () => {
   };
 
   const handleDownloadCluster = () => {
-    const txtURL = "../public/graficos2/descripción.docx";
+    const txtURL = "../graficos2/descripción.docx";
 
     const fileName = txtURL.split("/").pop();
 
@@ -138,7 +138,7 @@ const ECommerce = () => {
           <div className="mb-4 pb-5 border-b-2 rounded-xl grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white">
             <figure>
               <img
-                src="../public/graficos2/IMG_01_95936_COUNTRY.png"
+                src="../graficos2/IMG_01_95936_COUNTRY.png"
                 className="mx-auto"
               ></img>
               <figcaption className="text-xl text-center my-2 font-bold">
@@ -148,7 +148,7 @@ const ECommerce = () => {
 
             <figure>
               <img
-                src="../public/graficos2/IMG_01_95936_DEALSIZE.png"
+                src="../graficos2/IMG_01_95936_DEALSIZE.png"
                 className=" mx-auto"
               ></img>
               <figcaption className="text-xl text-center my-2 font-bold">
@@ -158,7 +158,7 @@ const ECommerce = () => {
 
             <figure>
               <img
-                src="../public/graficos2/IMG_01_95936_PRODUCTLINE.png"
+                src="../graficos2/IMG_01_95936_PRODUCTLINE.png"
                 className=" mx-auto"
               ></img>
               <figcaption className="text-xl text-center my-2 font-bold">
@@ -170,32 +170,32 @@ const ECommerce = () => {
           {/* SEGUNDO CONJUNTO DE IMAGENES */}
           <div className="mb-4 pb-5 border-b-2 rounded-xl grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white">
             <img
-              src="../public/graficos2/IMG_01_95936_21.png"
+              src="../graficos2/IMG_01_95936_21.png"
               className=" mx-auto"
             ></img>
 
             <img
-              src="../public/graficos2/IMG_01_95936_23_0.png"
+              src="../graficos2/IMG_01_95936_23_0.png"
               className="mx-auto"
             ></img>
 
             <img
-              src="../public/graficos2/IMG_01_95936_23_1.png"
+              src="../graficos2/IMG_01_95936_23_1.png"
               className="mx-auto"
             ></img>
 
             <img
-              src="../public/graficos2/IMG_01_95936_23_2.png"
+              src="../graficos2/IMG_01_95936_23_2.png"
               className="mx-auto"
             ></img>
 
             <img
-              src="../public/graficos2/IMG_01_95936_23_3.png"
+              src="../graficos2/IMG_01_95936_23_3.png"
               className="mx-auto"
             ></img>
 
             <img
-              src="../public/graficos2/IMG_01_95936_23_4.png"
+              src="../graficos2/IMG_01_95936_23_4.png"
               className="mx-auto"
             ></img>
           </div>
@@ -203,12 +203,12 @@ const ECommerce = () => {
           {/* TERCER CONJUNTO DE IMAGENES */}
           <div className="mb-5 pb-4 border-b-2 rounded-xl bg-white">
             <img
-              src="../public/graficos2/Figure_2.png"
+              src="../graficos2/Figure_2.png"
               className="mx-auto"
             ></img>
 
             <img
-              src="../public/graficos2/Figure_4.png"
+              src="../graficos2/Figure_4.png"
               className="mx-auto "
             ></img>
           </div>
@@ -217,7 +217,7 @@ const ECommerce = () => {
           <div className="mb-5 pb-4 border-b-2 rounded-xl grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white">
             <figure>
               <img
-                src="../public/graficos2/IMG_01_95936_22.png"
+                src="../graficos2/IMG_01_95936_22.png"
                 className="mx-auto"
               ></img>
               <figcaption className="text-xl text-center my-2 font-bold">
@@ -226,12 +226,12 @@ const ECommerce = () => {
             </figure>
 
             <img
-              src="../public/graficos2/newplot.png"
+              src="../graficos2/newplot.png"
               className="mx-auto"
             ></img>
 
             <img
-              src="../public/graficos2/Figure_1.png"
+              src="../graficos2/Figure_1.png"
               className=" mx-auto"
             ></img>
           </div>

@@ -6,7 +6,7 @@ export default function Home() {
       <div>
         <div className="flex items-center justify-center">
           <img
-            src="../public/img/logo/2023-07-07_19-04.png"
+            src="../img/logo/2023-07-07_19-04.png"
             className="my-16 pt-8 w-180"
           ></img>
         </div>
@@ -18,7 +18,7 @@ export default function Home() {
         <div>
           <div className="flex items-center justify-center">
             {/* <img
-              src="../public/img/home/social-media-marketing.png"
+              src="../img/home/social-media-marketing.png"
               className="my-16 mr-16 pt-8 w-96"
             ></img> */}
 
@@ -35,7 +35,7 @@ export default function Home() {
           </div>
         </div>
         <img
-          src="../public/img/home/10780.jpg"
+          src="../img/home/10780.jpg"
           className=" mr-16 pt-8 w-screen h-52"
         ></img>
       </div>

@@ -58,6 +58,7 @@
     "react-pro-sidebar": "^1.1.0-alpha.1",
     "react-router-dom": "^6.14.1",
     "react-spinners": "^0.13.8",
+    "vercel": "^33.5.4",
     "yup": "^1.2.0"
   },
   "devDependencies": {

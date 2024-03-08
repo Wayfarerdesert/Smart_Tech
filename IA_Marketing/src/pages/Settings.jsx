@@ -17,11 +17,11 @@ const Settings = () => {
   // const [analysisCompleted, setAnalysisCompleted] = useState(false);
 
   const handleDownload = () => {
-    const xlsxURL = "../../public/spreadsheet/FILE_01_75432.xlsx";
+    const xlsxURL = "../../spreadsheet/FILE_01_75432.xlsx";
     window.open(xlsxURL, "_blank");
   };
   const handleDownloadPDF = () => {
-    const pdfURL = "../../public/spreadsheet/instrucciones_Excel.pdf";
+    const pdfURL = "../../spreadsheet/instrucciones_Excel.pdf";
     window.open(pdfURL, "_blank");
   };
 

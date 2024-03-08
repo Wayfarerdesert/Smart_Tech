@@ -29,7 +29,7 @@ export default function ContactForm() {
   return (
     <div className="container p-10 flex flex-col justify-center items-center h-fit mt-36">
       <img
-        src="../public/img/logo/2023-07-07_19-04.png"
+        src="../img/logo/2023-07-07_19-04.png"
         className=" mx-auto"
       ></img>
       <h2 className="text-4xl m-3">Contacta con nosotros</h2>
@@ -156,7 +156,7 @@ export default function ContactForm() {
           </div>
         </div>
       </form>
-      <img src="../public/img/home/10780.jpg" className="w-screen h-52"></img>
+      <img src="../img/home/10780.jpg" className="w-screen h-52"></img>
     </div>
   );
 }

@@ -67,12 +67,12 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
         >
           <img
             className="w-55 h-16 d-none d-md-block "
-            src="../public/logo.png"
+            src="../logo.png"
             alt="LOGO"
           />
           <img
             className="w-10 h-10 d-none d-sm-block d-md-none"
-            src="../public/img/logo/2023-07-07_19-08.png"
+            src="../img/logo/2023-07-07_19-08.png"
             alt="LOGO"
           />
         </a>
